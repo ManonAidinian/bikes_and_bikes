@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1>Welcome to B&B</h1>
+    <h3>HERE GOES THE FILTER</h3>
+  </div>
+</div>
+
+<div class="">
+  <div class="text-left text-gray">
+
+    <h3></h3>
+  </div>
+</div>
+
+  <div class="" id="">
+    <h2>Latest on the bike Listing</h2>
+  <div class="row">
+    <% @bikes.each do |bike| %>
+      <div class="co-12 col-sm-6 col-md-4">
+        <%= link_to bike_path(bike), class: "text-decoration-none" do %>
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path("list_background.jpg") %>)">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  </div>
