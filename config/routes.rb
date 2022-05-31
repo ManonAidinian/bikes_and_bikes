@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get root,                       to: 'pages#home'
+  root to: 'pages#home'
   get '/dashboard/',              to: 'pages#dashboard'
   get '/bikes/',                  to: 'bikes#index'
   get '/bikes/:id',               to: 'bikes#show'
