@@ -3,4 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+
+  has_many :bikes, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :bookings, through: :bikes, dependent: :destroy
+  has_one_attached :avatar_picture
+
+
+  validates :email, :password, :first_name, :last_name, presence: true
+  validates :email, uniqueness: true
 end
