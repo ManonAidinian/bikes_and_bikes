@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get '/booking/:id/new_review',  to: 'booking#new_review'
   post '/booking/:id/new_review', to: 'booking#create_review'
 
+  get '/styleguide', to: 'pages#styleguide'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
