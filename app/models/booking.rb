@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :bike
+  has_one :review
 
   STATUS = ["pending", "accepted", "rejected"]
   validates :start_date, :end_date, presence: true
