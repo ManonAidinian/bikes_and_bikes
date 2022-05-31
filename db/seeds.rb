@@ -9,6 +9,7 @@
 require 'faker'
 
 User.destroy_all
+Bike.destroy_all
 i = 0
 10.times do
   i += 1
@@ -16,9 +17,9 @@ i = 0
   user.save
   # adding user bikes:
   rand(6).times do
-    bike = Bike.new(
+    bike = Bike.create(
       maker: ['Yamaha', 'Kawasaki', 'Honda', 'Gesits', 'Suzuki', 'Harley Davidson', 'Triumph'].sample,
-      model: 'QWRTYPSDFGHJKLZXCVNMB'.sample(3) + rand(1..6).to_s + rand(10).to_s + '05'.sample,
+      model: %w[C D F G H J K M N P Q R T V W X Y Z].sample(3).join + rand(1..6).to_s + rand(10).to_s + %w{0 5}.sample,
       category: Bike::CATEGORY.sample,
       location: "#{Faker::Address.city}, #{Faker::Address.country}",
       latitude: Faker::Address.latitude,
@@ -27,8 +28,11 @@ i = 0
       mileage: rand(500000),
       available: (rand(2) == 1),
       daily_price: rand(20000..1000000),
+      description: "The best #{Bike::CATEGORY.sample} you can get for money. Chuck Norris has this bike, that's why #{Faker::ChuckNorris.fact}",
       user: user
     )
-    user.save
+    p bike.valid?
+    p bike.save!
+    p bike
   end
 end
