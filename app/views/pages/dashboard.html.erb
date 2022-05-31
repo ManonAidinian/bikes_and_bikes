@@ -1,0 +1,61 @@
+<div class="navbar">
+<h1>Navbar</h1>
+</div>
+
+<div class="sidebar">
+
+<h1>Sidebar</h1>
+
+<p>Avatar</p>
+<p>About me?</p>
+<p><%= "I'm a legendary biker" %></p>
+<p><%= "Name: #{current_user.first_name} #{current_user.last_name}" %></p>
+<p><%= "Email: #{current_user.email}" %></p>
+<%= link_to 'My Bikes', '/dashboard#my_bikes' %>
+<%= link_to "Booking Requests", '/dashboard#booking_requests' %>
+<%= link_to "Bikes I book", '/dashboard#bikes_i_book' %>
+<%= link_to "Upcoming Bookings", '/dashboard#my_bikes' %>
+</div>
+<div class="container">
+<h1>Main page</h1>
+
+<h2>Hello<%= " #{current_user.first_name} #{current_user.last_name}" %></h2>
+<p><small><%= " Joined #{current_user.created_at}" %></small></p>
+
+<h2>My own bikes</h2>
+<%= link_to "Add new bike", '/bikes/new' %>
+
+<% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
+<div class="card p-2">
+  <p> picture </p>
+  <p><%= bike.maker  %> |
+    <%= bike.model  %> |
+    <%= bike.year  %> |
+    <%= bike.location  %> |
+    <%= bike.longitude  %> |
+    <%= bike.latitude  %> |
+    <%= bike.mileage  %></p>
+</div>
+<% end  %>
+<%= link_to "View all", '/dashboard#my_bikes' %>
+
+<% current_user.bookings.first(4).each do |booking| %>
+<div class="card p-2">
+  <p><%= booking.status  %> |
+    <%= booking.bike.maker  %> |
+    <%= booking.bike.model  %> |
+    <%= booking.bike.year  %></p>
+    <p><%= booking.user.email  %> |
+    <%= booking.user.first_name  %> |
+    <%= booking.user.last_name  %>
+  </p>
+</div>
+<% end  %>
+<%= link_to "View all", '/dashboard#bookings' %>
+</div>
+
+</div> <%# /container %>
+
+<div class="footer">
+<h1>Footer</h1>
+</div>
