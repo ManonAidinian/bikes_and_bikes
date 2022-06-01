@@ -1,177 +1,29 @@
+//base button features
 
-// first button size
-.nav-find-bike-btn {
+.button {
   color: $secondary;
   background: $primary;
   border-radius: 50px;
-  width: 180px;
-  height: 47px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  width: fit-content;
 }
 // first button size
-.nav-host-bike-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 180px;
+.primary-btn {
+  padding: 12px 20px;
   height: 47px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
 // second button size
-.discover-more-btn {
-  width: 220px;
+.secondary-btn {
+  padding: 15px 25px;
   height: 60px;
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-//second button size
-.continue-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 220px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 //third button size
-.next-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 120px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//third button size
-.save-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 120px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//fourth button size
-.facebook-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 160px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//fourth button size
-.apple-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 160px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//fourth button size
-.google-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 160px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//second button size
-.body-find-bike-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 220px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//first button size
-.body-host-bike-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 220px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//fifth button size
-.cencel-reservation-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 220px;
+.tertiary-btn {
+  padding: 10px 18px;
   height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//sixth button size
-.approve-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 120px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//sixth button size
-.reject-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 120px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//seventh button size
-.round-search-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 54px;
-  height: 54px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-//third button size
-.initial-options-btn {
-  color: $secondary;
-  background: $primary;
-  border-radius: 50px;
-  width: 120px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
