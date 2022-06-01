@@ -6,8 +6,10 @@
 <%= f.input :description%>
 <%= f.input :category%>
 <%= f.input :location%>
+<%= f.input :year%>
+<%= f.input :maker%>
 <%= f.input :mileage%>
 <%= f.input :daily_price %>
-<%= f.input :pictures, as: :file %>
+<%= f.input :pictures, as: :file, input_html: { multiple: true } %>
 <%= f.submit%>
 <%end%>
