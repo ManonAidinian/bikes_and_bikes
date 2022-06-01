@@ -7,13 +7,29 @@
   nihil quia nulla quibusdam!</p>
 
 <h2>Buttons</h2>
-<div class="nav-host-bike-btn btn-txt-body-primary">Host your Bike</div> <br>
-<div class="nav-find-bike-btn btn-txt-body-primary">Find a Bike</div> <br>
-<div class="discover-more-btn btn-txt-body-tertiary">Discover More</div> <br>
-<div class="continue-btn btn-txt-body-tertiary">Continue</div> <br>
-<div class="next-btn btn-txt-body-tertiary">Next</div> <br>
-<div class="save-btn btn-txt-body-tertiary">Save</div> <br>
-<div class="facebook-btn btn-txt-body-secondary">Facebook</div> <br>
+<%= link_to "Host a Bike", styleguide_path, class: 'button primary-btn btn-txt-body-primary' %> <br>
+<%= link_to "Find a Bike", styleguide_path, class: 'button primary-btn btn-txt-body-primary' %> <br>
+<%= link_to "Discover More", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+<%= link_to "Continue", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+<%= link_to "Next", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+<%= link_to "Save", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+<%= link_to styleguide_path do %>
+  <div class="button secondary-btn btn-txt-body-primary"><i class="fab fa-facebook"></i> Facebook</div>
+<% end %> <br>
+<%= link_to styleguide_path do %>
+  <div class="button secondary-btn btn-txt-body-primary"><i class="fab fa-apple"></i> Apple ID</div>
+<% end %> <br>
+<%= link_to styleguide_path do %>
+  <div class="button secondary-btn btn-txt-body-primary"><i class="fab fa-google"> </i> Google</div>
+<% end %> <br>
+<%= link_to "Find a Bike", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+<%= link_to "Host a Bike", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+<%= link_to "Cancel Reservation", styleguide_path, class: 'button tertiary-btn btn-txt-body-primary' %> <br>
+<%= link_to "Approve", styleguide_path, class: 'button tertiary-btn btn-txt-body-primary' %> <br>
+<%= link_to "Reject", styleguide_path, class: 'button tertiary-btn btn-txt-body-primary' %> <br>
+<%= link_to styleguide_path do %>
+  <div class="button tertiary-btn btn-txt-body-primary"><i class="fas fa-search"></i></div>
+<% end %>
 <hr>
 
 <%= link_to 'See more', "#", class: "button-primary" %>
