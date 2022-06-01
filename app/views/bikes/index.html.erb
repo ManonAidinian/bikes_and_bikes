@@ -2,6 +2,9 @@
 
 <% @bikes.each do |bike| %>
   <p><%=link_to bike.maker, bike_path(bike)  %> |
+    <% bike.pictures.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %> |
     <%= bike.model  %> |
     <%= bike.year  %> |
     <%= bike.description  %> |
