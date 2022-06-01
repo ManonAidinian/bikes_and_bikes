@@ -42,12 +42,13 @@
 
 .bike-card-small-rated {
   background-color: white;
-  padding: 25px;
+  // padding: 25px;
   width: fit-content;
 .bike-card-small-rated-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 15px;
     .star-container {
       .fa-star {
         color: $primary;
