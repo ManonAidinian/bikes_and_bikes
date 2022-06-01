@@ -1,0 +1,13 @@
+<h1>View all bikes</h1>
+
+
+<% @bikes.each do |bike| %>
+  <p><%= bike.maker  %> |
+    <%= bike.model  %> |
+    <%= bike.year  %> |
+    <%= bike.description  %> |
+    <%= bike.category  %> |
+    <%= bike.location  %> |
+    <%= bike.mileage  %>km |
+    <%= bike.daily_price.truncate  %>IDR</p>
+<% end  %>
