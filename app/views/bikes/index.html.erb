@@ -1,6 +1,8 @@
 <h1>View all bikes</h1>
 
+
 <% @bikes.each do |bike| %>
+<div class="bike-card-small-rated">
   <p><%=link_to bike.maker, bike_path(bike)  %> |
     <% bike.pictures.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
@@ -12,4 +14,5 @@
     <%= bike.location  %> |
     <%= bike.mileage  %>km |
     <%= bike.daily_price.truncate  %>IDR</p>
+</div>
 <% end  %>
