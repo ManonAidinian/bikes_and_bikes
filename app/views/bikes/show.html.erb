@@ -1,0 +1,13 @@
+<h1><%= @bike.model %></h1>
+
+  <p><%= @bike.model  %> |
+    <%= @bike.year  %> |
+    <%= @bike.description  %> |
+    <%= @bike.category  %> |
+    <%= @bike.location  %> |
+    <%= @bike.mileage  %>km |
+    <%= @bike.daily_price.truncate  %>IDR</p>
+    <%= cl_image_tag @bike.pictures.first&.key %>
+    </p>
+
+<%= console %>
