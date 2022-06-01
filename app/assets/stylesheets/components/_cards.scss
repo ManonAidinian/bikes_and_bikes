@@ -43,7 +43,7 @@
 .bike-card-small-rated {
   background-color: white;
   padding: 25px;
-  .bike-card-small-rated-header {
+.bike-card-small-rated-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,23 +58,13 @@
       font-size: 25px;
     }
   }
+
   img {
 
   }
-  .bike-card-small-rated-text {
-    color: #0B3954;
-    font-family: 'Montserrat';
-    h3 {
-      font-style: normal;
-      font-weight: 700;
-      font-size: 17px;
-      // line-height: 16px;
-    }
-    p {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 13px;
-      // line-height: 16px;
-    }
-  }
+}
+
+.fa-heart {
+  color: #0B3954;
+  font-size: 25px;
 }
