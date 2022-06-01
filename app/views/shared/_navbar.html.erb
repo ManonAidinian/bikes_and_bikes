@@ -5,23 +5,20 @@
     
     <ul class="nav-links lu">
       <li class="nav-linky li">
-        <%= link_to "Find a Bike", styleguide_path, class: 'button primary-btn btn-txt-body-primary button-block' %>
-      </li>
-<<<<<<< HEAD
-
-=======
-      
->>>>>>> b7f03a0d07d129dfd42b450ac8e8547fed4d3044
-      <li class = "nav-linky li">
-        <%= link_to "Host a Bike", styleguide_path, class: 'button primary-btn btn-txt-body-primary button-block' %>
+        <%= link_to "Find a Bike", bikes_path, class: 'button primary-btn btn-txt-body-primary button-block' %>
       </li>
       <li class = "nav-linky li">
-        <%= link_to "Sign In", styleguide_path, class: 'button primary-btn btn-txt-body-primary button-block' %>
-<<<<<<< HEAD
-=======
-
->>>>>>> b7f03a0d07d129dfd42b450ac8e8547fed4d3044
+        <%= link_to "Host a Bike", new_bike_path, class: 'button primary-btn btn-txt-body-primary button-block' %>
       </li>
+    <% if user_signed_in? %>
+      <li class = "nav-linky li">
+        <%= link_to "Dashboard", dashboard_path, class: 'button primary-btn btn-txt-body-primary button-block' %>
+      </li>
+    <% else %>
+      <li class = "nav-linky li">
+        <%= link_to "Sign In", new_user_session_path, class: 'button primary-btn btn-txt-body-primary button-block' %>
+      </li>
+    <% end %>
     </ul>
 
   </div>

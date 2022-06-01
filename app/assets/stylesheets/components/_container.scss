@@ -1,13 +1,12 @@
 .header{
+  background-color: black;
   height: 100vh;
   width: 100%;
   padding: 0 8%;
-  background-color: #080008;
   position: relative;
 }
 
 body {
-  
   color: #212529;
   background-color: white;
   -webkit-text-size-adjust: 100%;
@@ -64,9 +63,20 @@ body {
 
 .content form button{
   background: #0B3954;
+  color: white;
   border-radius: 50px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  border: none;
+  outline: none;
   padding: 15px 40px;
+}
+
+.back-video{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
 }
