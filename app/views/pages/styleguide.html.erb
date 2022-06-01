@@ -1,96 +1,80 @@
 <div class="my-container">
-<h1>Styleguide</h1>
+    <h1>Styleguide</h1>
 
-<h2>Container</h2>
-<hr>
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum veniam velit fugiat reprehenderit, labore quo possimus? Voluptas, hic, distinctio sapiente molestiae odio rem corrupti unde doloribus,
+    <h2>Container</h2>
+  <hr>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum veniam velit fugiat reprehenderit, labore quo possimus? Voluptas, hic, distinctio sapiente molestiae odio rem corrupti unde doloribus,
   nihil quia nulla quibusdam!</p>
 
-<h2>Buttons</h2>
-<%= link_to "Host a Bike", styleguide_path, class: 'button primary-btn btn-txt-body-primary' %> <br>
-<%= link_to "Find a Bike", styleguide_path, class: 'button primary-btn btn-txt-body-primary' %> <br>
-<%= link_to "Discover More", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
-<%= link_to "Continue", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
-<%= link_to "Next", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
-<%= link_to "Save", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
-<%= link_to styleguide_path do %>
-  <div class="button secondary-btn btn-txt-body-primary"><i class="fab fa-facebook"></i> Facebook</div>
-<% end %> <br>
-<%= link_to styleguide_path do %>
-  <div class="button secondary-btn btn-txt-body-primary"><i class="fab fa-apple"></i> Apple ID</div>
-<% end %> <br>
-<%= link_to styleguide_path do %>
-  <div class="button secondary-btn btn-txt-body-primary"><i class="fab fa-google"> </i> Google</div>
-<% end %> <br>
-<%= link_to "Find a Bike", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
-<%= link_to "Host a Bike", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
-<%= link_to "Cancel Reservation", styleguide_path, class: 'button tertiary-btn btn-txt-body-primary' %> <br>
-<%= link_to "Approve", styleguide_path, class: 'button tertiary-btn btn-txt-body-primary' %> <br>
-<%= link_to "Reject", styleguide_path, class: 'button tertiary-btn btn-txt-body-primary' %> <br>
-<%= link_to styleguide_path do %>
-  <div class="button tertiary-btn btn-txt-body-primary"><i class="fas fa-search"></i></div>
-<% end %>
-<hr>
+    <h2>Buttons</h2>
+    <%= link_to "Host a Bike", styleguide_path, class: 'button primary-btn btn-txt-body-primary' %> <br>
+    <%= link_to "Find a Bike", styleguide_path, class: 'button primary-btn btn-txt-body-primary' %> <br>
+    <%= link_to "Discover More", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+    <%= link_to "Continue", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+    <%= link_to "Next", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+    <%= link_to "Save", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+    <%= link_to styleguide_path do %>
+      <div class="button secondary-btn btn-txt-body-primary"><i class="fab fa-facebook"></i> Facebook</div>
+    <% end %> <br>
+    <%= link_to styleguide_path do %>
+      <div class="button secondary-btn btn-txt-body-primary"><i class="fab fa-apple"></i> Apple ID</div>
+    <% end %> <br>
+    <%= link_to styleguide_path do %>
+      <div class="button secondary-btn btn-txt-body-primary"><i class="fab fa-google"> </i> Google</div>
+    <% end %> <br>
+    <%= link_to "Find a Bike", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+    <%= link_to "Host a Bike", styleguide_path, class: 'button secondary-btn btn-txt-body-primary' %> <br>
+    <%= link_to "Cancel Reservation", styleguide_path, class: 'button tertiary-btn btn-txt-body-primary' %> <br>
+    <%= link_to "Approve", styleguide_path, class: 'button tertiary-btn btn-txt-body-primary' %> <br>
+    <%= link_to "Reject", styleguide_path, class: 'button tertiary-btn btn-txt-body-primary' %> <br>
+    <%= link_to styleguide_path do %>
+      <div class="button tertiary-btn btn-txt-body-primary"><i class="fas fa-search"></i></div>
+    <% end %>
+  <hr>
 
-<%= link_to 'See more', "#", class: "button-primary" %>
-
+    <%= link_to 'See more', "#", class: "button-primary" %>
 </div>
 
 <h2>Cards</h2>
 <div class="cards">
   <div class="bike-card-small-rated">
-  <div class="bike-card-small-rated-header">
-    <div class="star-container">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
+    <div class="bike-card-small-rated-header">
+      <div class="star-container">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <div>
+        <i class="far fa-heart"></i>
+      </div>
     </div>
-    <i class="far fa-heart"></i>
-  </div>
-
-  <div class="bike-card-small-rated-text">
-    <%= image_tag 'nmax1.jpeg' %>
-    <h3>Yamaha | Nmax</h3>
-    <p>Canggu, Bali, Indonesia</p>
+    <div class="bike-card-small-rated-text">
+      <%= image_tag 'nmax1.jpeg' %>
+      <h3>Yamaha | Nmax</h3>
+      <p>Canggu, Bali, Indonesia</p>
+    </div>
   </div>
 </div>
+<br>
+<br>
 
-  <div class="bike-card-small-rated">
-  <div class="bike-card-small-rated-header">
-    <div class="star-container">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    </div>
+<div class="cards">
+  <div class="bike-card-medium-vertical">
+    <%= image_tag 'NMax 3.jpeg'%>
     <i class="far fa-heart"></i>
-  </div>
-
-  <div class="bike-card-small-rated-text">
-    <%= image_tag 'nmax1.jpeg' %>
-    <h3>Yamaha | Nmax</h3>
-    <p>Canggu, Bali, Indonesia</p>
-  </div>
-</div>
-
-  <div class="bike-card-small-rated">
-  <div class="bike-card-small-rated-header">
-    <div class="star-container">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
+    <div class="bike-price-med-vert">
+      <h3>250,000 IDR/day</h3>
     </div>
-    <i class="far fa-heart"></i>
-  </div>
-
-  <div class="bike-card-small-rated-text">
-    <%= image_tag 'nmax1.jpeg' %>
-    <h3>Yamaha | Nmax</h3>
-    <p>Canggu, Bali, Indonesia</p>
+    <div class="bike-name-med-vert">
+      <h3>Yamaha | Nmax</h3>
+      <p>Canggu, Bali, Indonesia</p>
+    </div>
+    <div>
+      <i class="fas fa-motorcycle">2021</i>
+      <i class="fas fa-arrow-circle-right">30,000 KM</i>
+      <i class="fas fa-star">4.9</i>
+    </div>
   </div>
 </div>
