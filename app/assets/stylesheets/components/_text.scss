@@ -1,5 +1,11 @@
 .h1 {
-  color: #212529;
+  color: $primary;
+  font-size: 33px;
+}
+
+.h2 {
+  color: $primary;
+  font-size: 23px;
 }
 
 .btn-txt-body-primary {
@@ -25,4 +31,21 @@
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
+}
+
+.bike-card-small-rated-text {
+  color: $primary;
+  font-family: 'Montserrat';
+  h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    // line-height: 16px;
+  }
+  p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    // line-height: 16px;
+  }
 }
