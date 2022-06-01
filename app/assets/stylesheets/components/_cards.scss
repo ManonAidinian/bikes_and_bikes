@@ -43,28 +43,85 @@
 .bike-card-small-rated {
   background-color: white;
   padding: 25px;
+  width: fit-content;
 .bike-card-small-rated-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     .star-container {
       .fa-star {
-        color: #0B3954;
+        color: $primary;
         font-size: 15px;
       }
-    }
-    .fa-heart {
-      color: #0B3954;
-      font-size: 25px;
+      .fa-heart {
+        color: $primary;
+        font-size: 25px;
+      }
     }
   }
 
-  img {
-
-  }
 }
 
 .fa-heart {
-  color: #0B3954;
+  color: $primary;
   font-size: 25px;
+}
+
+.fa-star {
+  color: $primary;
+  font-size: 15px;
+}
+
+// .bike-card-medium-vert {
+//   background-size: cover;
+//   background-position: center;
+//   height: 472px;
+//   width: 382px;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .bike-price-med-vert {
+//   // position: absolute;
+//   width: 346px;
+//   height: 24px;
+//   left: 0px;
+//   top: 378px;
+// }
+
+// .bike-name-med-vert {
+//   // position: absolute;
+//   width: 188px;
+//   height: 27px;
+//   left: 22px;
+//   top: 307px;
+// }
+
+.bike-card-medium-vert {
+  background-color: white;
+  padding: 25px;
+  max-width: fit-content;
+.bike-card-medium-vert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .fa-heart {
+      color: $primary;
+      font-size: 25px;
+    }
+  }
+  .bike-price-med-vert {
+    // position: absolute;
+    width: 346px;
+    height: 24px;
+    left: 0px;
+    top: 378px;
+  }
+  .bike-name-med-vert {
+    // position: absolute;
+    width: 188px;
+    height: 27px;
+    left: 22px;
+    top: 307px;
+  }
 }
