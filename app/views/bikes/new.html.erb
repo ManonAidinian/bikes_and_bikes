@@ -1,0 +1,13 @@
+<h1>Host your bike</h1>
+
+
+<%= simple_form_for (@bike) do |f| %>
+<%= f.input :model%>
+<%= f.input :description%>
+<%= f.input :category%>
+<%= f.input :location%>
+<%= f.input :mileage%>
+<%= f.input :daily_price %>
+<%= f.input :pictures, as: :file %>
+<%= f.submit%>
+<%end%>
