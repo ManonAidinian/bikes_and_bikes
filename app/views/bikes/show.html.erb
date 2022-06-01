@@ -1,13 +1,27 @@
-<h1><%= @bike.model %></h1>
+<div class="my-container">
 
-  <p><%= @bike.model  %> |
-    <%= @bike.year  %> |
-    <%= @bike.description  %> |
-    <%= @bike.category  %> |
-    <%= @bike.location  %> |
-    <%= @bike.mileage  %>km |
-    <%= @bike.daily_price.truncate  %>IDR</p>
-    <%= cl_image_tag @bike.pictures.first&.key %>
-    </p>
+  <div class="bike-columns">
 
-<%= console %>
+    <div class="images">
+      <div class="pic"><%= image_tag 'nmax1.jpeg' %></div>
+    </div>
+
+  <div class="bike-infos">
+    <h1><%= @bike.model %></h1>
+
+    <ul class="">
+      <li class="">Year : <%= @bike.year  %></li>
+      <li class="">Description : <%= @bike.description  %></li>
+      <li class="">Category : <%= @bike.category  %></li>
+      <li class="">Location : <%= @bike.location  %></li>
+      <li class="">Mileage : <%= @bike.mileage  %> Km</li>
+      <li class="">Price : <%= @bike.daily_price.truncate  %>IDR/Day</li>
+    </ul>
+
+    <%= link_to "Book", styleguide_path, class: 'button primary-btn btn-txt-body-primary' %>
+  </div>
+</div>
+
+
+
+    <%# <%= cl_image_tag @bike.pictures.first&.key %>
