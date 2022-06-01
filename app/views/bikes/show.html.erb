@@ -3,11 +3,13 @@
   <div class="bike-columns">
 
     <div class="images">
-      <div class="pic"><%= image_tag 'nmax1.jpg' %></div>
+
+      <%= cl_image_tag @bike.pictures.first.key, height: 200, width: 400, crop: :fill, class: 'pic' %>
+
     </div>
 
   <div class="bike-infos">
-    <h1><%= @bike.model %></h1>
+    <h1><%= "#{@bike.maker} #{@bike.model}" %></h1>
 
     <ul class="">
       <li class="">Year : <%= @bike.year  %></li>
