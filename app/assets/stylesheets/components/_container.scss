@@ -27,6 +27,8 @@ body {
   flex: 1;
   padding: 16px;
   background-color: white;
+  border-radius: 5px;
+  border: 2px darkgray;
 }
 
 .content {
@@ -79,4 +81,9 @@ body {
   width: auto;
   height: auto;
   z-index: -100;
+}
+
+.bike {
+  width: 150px;
+  margin: 0 10px 0 0;
 }
