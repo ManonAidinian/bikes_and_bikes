@@ -1,127 +1,115 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
+// .cards {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+// }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
+// // Smallest device
+// @media (min-width: 100px) and (max-width: 575px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
 
 
-.bike-card-small-rated {
-  background-color: white;
-  padding: 25px;
-  width: fit-content;
-.bike-card-small-rated-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .star-container {
-      .fa-star {
-        color: $primary;
-        font-size: 15px;
-      }
-      .fa-heart {
-        color: $primary;
-        font-size: 25px;
-      }
-    }
-  }
+// .bike-card-small-rated {
+//   background-color: white;
+//   padding: 25px;
+//   .bike-card-small-rated-header {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     .star-container {
+//       .fa-star {
+//         color: #0B3954;
+//         font-size: 15px;
+//       }
+//     }
+//     .fa-heart {
+//       color: #0B3954;
+//       font-size: 25px;
+//     }
+//   }
+//   img {
 
-}
+//   }
+//   .bike-card-small-rated-text {
+//     color: #0B3954;
+//     font-family: 'Montserrat';
+//     h3 {
+//       font-style: normal;
+//       font-weight: 700;
+//       font-size: 17px;
+//       // line-height: 16px;
+//     }
+//     p {
+//       font-style: normal;
+//       font-weight: 500;
+//       font-size: 13px;
+//       // line-height: 16px;
+//     }
+//   }
+// }
 
-.fa-heart {
-  color: $primary;
-  font-size: 25px;
-}
-
-.fa-star {
-  color: $primary;
-  font-size: 15px;
-}
-
-// .bike-card-medium-vert {
-//   background-size: cover;
-//   background-position: center;
-//   height: 472px;
-//   width: 382px;
+// .container {
 //   display: flex;
-//   justify-content: center;
+//   width: 1040px;
+//   justify-content: space-evenly;
+//   flex-wrap: wrap;
 // }
 
-// .bike-price-med-vert {
-//   // position: absolute;
-//   width: 346px;
-//   height: 24px;
-//   left: 0px;
-//   top: 378px;
-// }
+.bike_row {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.bike_card {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+}
 
-// .bike-name-med-vert {
-//   // position: absolute;
-//   width: 188px;
-//   height: 27px;
-//   left: 22px;
-//   top: 307px;
-// }
+.bike_image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
 
-.bike-card-medium-vert {
-  background-color: white;
-  padding: 25px;
-  max-width: fit-content;
-.bike-card-medium-vert-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .fa-heart {
-      color: $primary;
-      font-size: 25px;
-    }
-  }
-  .bike-price-med-vert {
-    // position: absolute;
-    width: 346px;
-    height: 24px;
-    left: 0px;
-    top: 378px;
-  }
-  .bike-name-med-vert {
-    // position: absolute;
-    width: 188px;
-    height: 27px;
-    left: 22px;
-    top: 307px;
-  }
+.bike_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 250px;
 }

@@ -1,18 +1,31 @@
 <h1>View all bikes</h1>
 
 
-<% @bikes.each do |bike| %>
-<div class="bike-card-small-rated">
-  <p><%=link_to bike.maker, bike_path(bike)  %> |
-    <% bike.pictures.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %> |
-    <%= bike.model  %> |
-    <%= bike.year  %> |
-    <%= bike.description  %> |
-    <%= bike.category  %> |
-    <%= bike.location  %> |
-    <%= bike.mileage  %>km |
-    <%= bike.daily_price.truncate  %>IDR</p>
+<div class="container">
+<div class="bike_row" >
+    <% @bikes.each do |bike| %>
+    <div class="bike_card">
+    <div class="bike_image">
+      <p><%=link_to bike.maker, bike_path(bike)  %> |
+        <% bike.pictures.each do |photo| %>
+         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %> |
+    </div>
+
+    <div class="bike_body">
+      <%= bike.description  %> |
+      <%= bike.location  %> |
+      <%= bike.model  %> |
+      <%= bike.year  %> |
+      <%= bike.category  %> |
+      <%= bike.mileage  %>km |
+    </div>
+
+    <div class="bike_price">
+      <%= bike.daily_price.truncate  %>IDR</p>
+    </div>
+    
+  </div>
+  <% end  %>
 </div>
-<% end  %>
+</div>
