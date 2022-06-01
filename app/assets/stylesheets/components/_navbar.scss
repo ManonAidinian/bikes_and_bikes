@@ -6,16 +6,19 @@
 
 .logo {
   width: 50px;
+  margin: 0 0 5px 0;
 }
 
 .nav-links {
   padding: 10px 1px 5px 1px;
+  list-style-type: none;
+  display: flex;
 }
 
-.nav-linky.li {
-  display: inline-block;
-  margin: 0 15px
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  padding: 5px 0;
+.button-block {
+  margin: 0 5px;
+}
+
+.button-block:hover {
+  color: gray;
 }
