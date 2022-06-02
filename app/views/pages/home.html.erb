@@ -1,17 +1,20 @@
 <div class="header">
     <div class="content">
       <h1 class="banner-title">Welcome to B&B</h1>
-      <h2 class="banner-title">Find the perfect bike for you or rent your own and make money!</h2><br>
+      <h2 class="banner-slogan">Find the perfect bike for you or rent your own and make money!</h2><br>
+
+      <div class="search-container">
       <%= form_tag bikes_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "find a bike by model, location, maker, year, category ..."
-      %>
+          placeholder: "Find a bike by model, location, maker, year, category ..."
+        %>
         <div class="search-button">
         <%= submit_tag "Search", class: "btn btn-primary" %>
         </div>
       <% end %>
+      </div>
 
     </div>
 </div>
