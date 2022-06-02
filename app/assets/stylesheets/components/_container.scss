@@ -68,3 +68,14 @@ body {
   width: 150px;
   margin: 0 10px 0 0;
 }
+
+.card-map-container {
+  margin-top: 30px;
+}
+
+#map {
+  height: 100vh;
+  width: 400px;
+  position: sticky;
+  top:0;
+}
