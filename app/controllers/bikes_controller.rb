@@ -6,7 +6,10 @@ class BikesController < ApplicationController
     else
       @bikes = Bike.all
     end
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5b62d5996dd09f6a156024590931d99a55a2db55
     @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,
@@ -17,6 +20,8 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
+    @bike_avg_rating = @bike.reviews.average(:bike_rating)
+    @owner_avg_rating = @bike.reviews.average(:owner_rating)
   end
 
   def new
