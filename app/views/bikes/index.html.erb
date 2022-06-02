@@ -8,12 +8,6 @@
 
   <div class="card-map-container">
 
-<<<<<<< HEAD
-<%# ----------------SEARCHBAR--------------- %>
-<%#= simple_form_for :bike, method: :get do |f| %>
-  <%#= f.input :category, collection: Bike::CATEGORIES %>
-  <%#= f.submit %>
-<%# end %>
 
  <%= form_tag bikes_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
@@ -26,13 +20,16 @@
         </div>
       <% end %>
 
-=======
     <div class="map" style="width: 100%; height: 600px;"
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
       data-mapbox-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>">
     </div>
+<<<<<<< HEAD
 >>>>>>> 5b62d5996dd09f6a156024590931d99a55a2db55
+=======
+
+>>>>>>> 779d77be746438cdfbaf50c88b971cb9170de74a
 
 
 

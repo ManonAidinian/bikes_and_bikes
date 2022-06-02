@@ -6,10 +6,7 @@ class BikesController < ApplicationController
     else
       @bikes = Bike.all
     end
-<<<<<<< HEAD
-
-=======
->>>>>>> 5b62d5996dd09f6a156024590931d99a55a2db55
+    
     @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,
