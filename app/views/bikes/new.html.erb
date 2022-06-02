@@ -1,20 +1,32 @@
 <div class="container">
-<div class="col-6">
 
-<h1>Host your bike</h1>
+  <div class="page-title">
+    <h1>Host your bike :</h1>
+  </div>
 
+  <div class="row">
+    <div class="col-6">
+      <div class="new-bike-form">
+        <%= simple_form_for (@bike) do |f| %>
+          <%= f.input :model, placeholder: 'VDW560'%>
+          <%= f.input :maker, placeholder: 'Harley Davidson'%>
+          <%= f.input :year, placeholder: '1998'%>
+          <%= f.input :category, collection: Bike::CATEGORIES%>
+          <%= f.input :description, placeholder: 'This bike will take you to your most unforgetable adventures'%>
+          <%= f.input :mileage, label: 'Mileage (in km)', placeholder: '135000'%>
+          <%= f.input :location, placeholder: 'Jalan Munduk Catu No.32, Canggu, Bali 80361, Indonesia'%>
+          <%= f.input :daily_price, label: 'Daily renting price (in Idr)',placeholder: '675000'%>
+          <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
+          <%= f.submit "Host your bike", class: "button primary-btn" %>
+        <%end%>
+      </div>
+    </div>
 
-<%= simple_form_for (@bike) do |f| %>
-<%= f.input :model%>
-<%= f.input :description%>
-<%= f.input :category%>
-<%= f.input :location%>
-<%= f.input :year%>
-<%= f.input :maker%>
-<%= f.input :mileage%>
-<%= f.input :daily_price %>
-<%= f.input :pictures, as: :file, input_html: { multiple: true } %>
-<%= f.submit%>
-<%end%>
-</div>
+    <div class="col-6">
+      <div class="host-image">
+        <%= image_tag ("NMax 3.jpg") %>
+      </div>
+    </div>
+  </div>
+
 </div>
