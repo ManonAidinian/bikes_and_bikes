@@ -3,6 +3,10 @@
   font-size: 33px;
 }
 
+h3 a:link {
+  text-decoration:none;
+}
+
 h1 {
   font-family: 'Montserrat';
   color: $primary;
@@ -13,7 +17,7 @@ h1 {
 
 .h2 {
   color: $primary;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .btn-txt-body-primary {
@@ -29,11 +33,19 @@ h1 {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: $tertiary;
+}
+.btn-txt-body-tertiary {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
   font-size: 14px;
   line-height: 17px;
 }
 
-.btn-txt-body-tertiary {
+.btn-txt-body-fourth {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
@@ -56,4 +68,51 @@ h1 {
     font-size: 13px;
     // line-height: 16px;
   }
+}
+
+.card-category {
+  color: $secondary;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 3px 3px 5px $primary;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.profile-card h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 24px ;
+  font-weight: bold;
+}
+
+.profile-card p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 25px;
+  text-justify: wrap;
+  color: $primary;
+}
+
+.confirmation {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
 }

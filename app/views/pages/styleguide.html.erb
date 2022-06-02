@@ -60,13 +60,11 @@
 <br>
 <br>
 
-<div class="cards">
-  <div class="bike-card-medium-vertical">
-    <%= image_tag 'NMax 3.jpg'%>
-    <i class="far fa-heart"></i>
-    <div class="bike-price-med-vert">
-      <h3>250,000 IDR/day</h3>
-    </div>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'NMax3.jpg'%>)">
+  <div class="bike-price-med-vert">
+    <h3>250,000 IDR/day</h3>
+  </div>
+  <div>
     <div class="bike-name-med-vert">
       <h3>Yamaha | Nmax</h3>
       <p>Canggu, Bali, Indonesia</p>
@@ -76,5 +74,58 @@
       <i class="fas fa-arrow-circle-right">30,000 KM</i>
       <i class="fas fa-star">4.9</i>
     </div>
+  </div>
+</div>
+
+<div class="card-product">
+  <%= image_tag "NMax3.jpg" %>
+  <div>
+    <div class="card-product-infos">
+      <h3>250,000 IDR/day</h3>
+    </div>
+    <div class="card-product-infos" >
+      <h3>Yamaha | Nmax</h3>
+      <p>Canggu, Bali, Indonesia</p>
+    </div>
+    <div class="card-product-infos bike-name-med-vert" >
+      <i class="fas fa-motorcycle">2021</i>
+      <i class="fas fa-arrow-circle-right">30,000 KM</i>
+      <i class="fas fa-star">4.9</i>
+    </div>
+  </div>
+</div>
+
+
+<div class="profile-card">
+<img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+  <div>
+    <div>
+      <h2>About Me</h2>
+    </div>
+    <div>
+      <p>Midway attempted to put Chuck Norris into Mortal Kombat but decided against it due to programming errors with each button performing a roundhouse kick.</p>
+    </div>
+    <div>
+      <div class="confirmation"><i class="fas fa-at"></i><h6> Email Confirmed</h6></div>
+      <div class="confirmation"><i class="fas fa-mobile-alt"></i><h6> Mobile Confirmed</h6></div>
+    </div>
+    <br>
+    <br>
+    <div id="edit-profile">
+      <a class="button secondary-btn btn-txt-body-primary button-block" href="#">Edit my Profile</a>
+    </div>
+    <div>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="profile-card-buttons">
+  <div class="btn-ghost">My bikes</div>
+  <div class="btn-ghost">Booking Requests</div>
+  <div class="btn-ghost">Upcoming Bookings</div>
+  <div class="btn-ghost">My Bookings</div>
+  </div>
+  <div>
+    <br>
   </div>
 </div>
