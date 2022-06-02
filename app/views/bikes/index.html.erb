@@ -12,6 +12,23 @@
   data-mapbox-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"></div>
 </div>
 
+<%# ----------------SEARCHBAR--------------- %>
+<%#= simple_form_for :bike, method: :get do |f| %>
+  <%#= f.input :category, collection: Bike::CATEGORIES %>
+  <%#= f.submit %>
+<%# end %>
+
+ <%= form_tag bikes_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "find a bike by model, location, maker, year, category ..."
+      %>
+        <div class="search-button">
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+
 
 <div class="raw">
 <div class="cards">
