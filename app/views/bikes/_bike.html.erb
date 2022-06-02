@@ -12,9 +12,9 @@
   </div>
 
   <div class="bike-card-small-rated-text">
-    <% bike.pictures.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 200, width: 350, crop: :fill %>
-    <% end %>
+
+      <%= cl_image_tag bike.pictures.first.key, height: 200, width: 350, crop: :fill %>
+
     <div class="text">
       <h3><%=link_to "#{bike.maker} #{bike.model}", bike_path(bike) %></h3>
       <p>
