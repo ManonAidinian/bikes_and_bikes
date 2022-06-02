@@ -1,7 +1,6 @@
 //base button features
 
 .button {
-  color: $secondary;
   background: $primary;
   border-radius: 50px;
   display: flex;
@@ -12,18 +11,28 @@
 }
 // first button size
 .primary-btn {
+  color: $secondary;
   padding: 12px 20px;
   height: 47px;
 }
 
 // second button size
 .secondary-btn {
+  color: $tertiary;
+  padding: 12px 20px;
+  height: 47px;
+}
+
+// second button size
+.tertiary-btn {
+  color: $secondary;
   padding: 15px 25px;
   height: 60px;
 }
 
-//third button size
-.tertiary-btn {
+//fourth button size
+.forth-btn {
+  color: $secondary;
   padding: 10px 18px;
   height: 40px;
 }
