@@ -1,0 +1,28 @@
+<div class="bike-card-small-rated">
+
+  <div class="bike-card-small-rated-header">
+    <div class="star-container">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+    </div>
+    <i class="far fa-heart"></i>
+  </div>
+
+  <div class="bike-card-small-rated-text">
+
+      <%= cl_image_tag bike.pictures.first.key, height: 200, width: 350, crop: :fill %>
+
+    <div class="text">
+      <h3><%=link_to "#{bike.maker} #{bike.model}", bike_path(bike) %></h3>
+      <p>
+        <%= bike.category  %> |
+        <%= bike.location  %> |
+        <%= bike.daily_price.truncate  %>IDR
+      </p>
+    </div>
+  </div>
+
+</div>

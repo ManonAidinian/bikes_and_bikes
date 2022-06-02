@@ -3,11 +3,12 @@ class Bike < ApplicationRecord
   pg_search_scope :search_globally,
     against: [ :model, :category, :location, :year, :mileage, :maker, :daily_price, :description ],
     using: {
-      tsearch: { prefix: true } 
+      tsearch: { prefix: true }
     }
 
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_many :reviews, through: :bookings, dependent: :destroy
   has_many_attached :pictures
 
   CATEGORIES = ["Scooter", "Dirt-bike", "Chopper", "Sport", "Naked", "Other"]
