@@ -4,7 +4,7 @@ class BikesController < ApplicationController
     if params[:query].present?
       @bikes = Bike.search_globally(params[:query])
     else
-      @bikes = Bikes.all
+      @bikes = Bike.all
     end
   end
 
