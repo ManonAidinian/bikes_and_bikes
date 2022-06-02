@@ -9,3 +9,12 @@
 .bike-card-small-rated {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.card-map-container {
+  display: flex;
+}
+
+.map {
+  height: 100vh;
+  position: sticky;
+}
