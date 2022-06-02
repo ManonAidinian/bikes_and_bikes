@@ -1,22 +1,16 @@
 .header{
+  background-color: black;
   height: 100vh;
   width: 100%;
   padding: 0 8%;
-  background-color: #080008;
   position: relative;
 }
 
 body {
-  
   color: #212529;
   background-color: white;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-.my-container {
-  max-width: 1100px;
-  margin: 50px 25px;
-  background-color: white;
 }
 
 .col-container {
@@ -28,4 +22,50 @@ body {
   flex: 1;
   padding: 16px;
   background-color: white;
+}
+
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90%;
+  max-width: 900px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.content h1 {
+  font-size: 65px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.content form {
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+}
+
+.content form input{
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  font-size: 18px;
+}
+
+.content form button{
+  background: #0B3954;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  padding: 15px 40px;
+}
+
+.bike {
+  width: 150px;
+  margin: 0 10px 0 0;
 }
