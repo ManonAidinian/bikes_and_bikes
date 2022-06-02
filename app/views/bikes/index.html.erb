@@ -1,6 +1,9 @@
 <div class="container">
 
-<h1>All bikes</h1>
+<div class="page-title">
+  <h1>Bikes for rent :</h1>
+  <hr>
+</div>
 
 <%# map! %>
 <div style="width: 100%; height: 600px;"
@@ -33,13 +36,16 @@
     <% bike.pictures.each do |photo| %>
       <%= cl_image_tag photo.key, height: 200, width: 400, crop: :fill %>
     <% end %>
-    <h3><%=link_to "#{bike.maker} #{bike.model}", bike_path(bike) %></h3>
-    <p>    <%= bike.year  %> |
-      <%= bike.description  %> |
-      <%= bike.category  %> |
-      <%= bike.location  %> |
-      <%= bike.mileage  %>km |
-      <%= bike.daily_price.truncate  %>IDR</p>
+    <div class="text">
+      <h3><%=link_to "#{bike.maker} #{bike.model}", bike_path(bike) %></h3>
+      <p>
+      <%# <%= bike.year  %>
+        <%# <%= bike.description  %>
+        <%= bike.category  %> |
+        <%= bike.location  %> |
+        <%# <%= bike.mileage  %>
+        <%= bike.daily_price.truncate  %>IDR</p>
+      </div>
     </div>
   </div>
 </div>
