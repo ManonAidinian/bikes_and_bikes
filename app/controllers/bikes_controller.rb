@@ -18,6 +18,11 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     @bike_avg_rating = @bike.reviews.average(:bike_rating)
     @owner_avg_rating = @bike.reviews.average(:owner_rating)
+
+    @marker = {
+        lat: @bike.latitude || 0,
+        lng: @bike.longitude || 0
+      }
   end
 
   def new

@@ -12,7 +12,7 @@
         <div class="carousel-inner shadow-sm" style="border-radius: 1rem">
           <% @bike.pictures.each_with_index do |picture, i| %>
           <div class="carousel-item <%= 'active' if i==0 %>">
-            <%= cl_image_tag picture.key, class: "d-block w-100"%>
+            <%= cl_image_tag picture.key, class: "d-block w-100", style: "height: 500px; object-fit: cover" %>
           </div>
           <% end %>
         </div>
@@ -29,26 +29,19 @@
     </div>
     <%# Column with price and owner data %>
     <div class="col-4 text-center my-5">
-        <h1><%= @bike.daily_price.truncate.to_s.reverse.gsub(/...(?=.)/,'\& ').reverse %> <small class="text-muted fw-light">IDR / Day</small></h1>
-        <p class="text-muted fw-light"><%= (@bike.daily_price.truncate * 30).to_s.reverse.gsub(/...(?=.)/,'\& ').reverse %>IDR / month</p>
-        <%= link_to "Rent this bike", bookings_new_path, class: 'button secondary-btn btn-txt-body-primary mx-auto mt-5' %>
-        <%= link_to "☏ Contact host", bookings_new_path, class: 'btn mx-auto mt-5' %>
-
-        <div class="row mt-4" >
-          <div class="col-3 p-2 position-relative">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
-          </div>
-        <div class="col-9 p-2 text-start">
-          <p>
-            <%= "#{@bike.user.first_name} #{@bike.user.last_name}" %><br>
-            <em><%= @bike.user.email %></em><br>
-            Average rating: <strong><%= @owner_avg_rating %></strong>
-          </p>
-      </div>
+      <h1><%= @bike.daily_price.truncate.to_s.reverse.gsub(/...(?=.)/,'\& ').reverse %> <small class="text-muted fw-light">IDR / Day</small></h1>
+      <p class="text-muted fw-light"><%= (@bike.daily_price.truncate * 30).to_s.reverse.gsub(/...(?=.)/,'\& ').reverse %>IDR / month</p>
+      <%= link_to "Rent this bike", bookings_new_path, class: 'button secondary-btn btn-txt-body-primary mx-auto mt-5' %>
+        <br/><%= cl_image_tag @bike.user.avatar_picture.key, class: "avatar-for-bike-page mt-3" %>
+        <p>
+          <%= "#{@bike.user.first_name} #{@bike.user.last_name}" %><br>
+          <%= @owner_avg_rating.nil? ? "" : "Average rating:" %> <strong><%= @owner_avg_rating %></strong>
+        </p>
+      <%= link_to "Contact the host ✉", "mailto:#{@bike.user.email}", class: 'btn mx-auto mt-5' %>
+          <em><%= @bike.user.email %></em><br>
     </div>
-  </div>
 
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-12">
       <h2><%= @bike.maker %> <strong><%= @bike.model %></strong></h2>
       <h3 class="text-muted"><%= @bike.location %></h3>
@@ -83,7 +76,7 @@
       <div class="card w-100">
         <div class="card-body text-center mt-2">
 
-          <h5 class="card-title"><%= @bike_avg_rating == "" ? "—" : @bike_avg_rating %></h5>
+          <h5 class="card-title"><%= @bike_avg_rating.nil? ? "—" : @bike_avg_rating %></h5>
 
           <h6 class="card-subtitle mb-2 text-muted">Rating (<%= @bike.reviews.count %> reviews)</h6>
         </div>
@@ -97,12 +90,12 @@
     </div>
   </div>
 
-  <div class="row mt-5">
+  <div class="row mt-4">
     <div class="col-12">
       <div class="card w-100">
         <div style="height: 300px;"
           data-controller="mapbox"
-          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-markers-value="[<%= @marker.to_json %>]"
           data-mapbox-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>">
         </div>
       </div>
@@ -111,7 +104,7 @@
 
   <div class="row mt-5">
     <div class="col-12">
-      <h2>Bike reviews</h2>
+      <%= @bike.reviews.count > 0 ? "<h2>Bike reviews</h2>" : "" %>
 
       <% @bike.reviews.each do |review| %>
         <div class="card mb-4">
