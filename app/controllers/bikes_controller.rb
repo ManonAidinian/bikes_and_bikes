@@ -7,6 +7,7 @@ class BikesController < ApplicationController
         lat: bike.latitude,
         lng: bike.longitude
       }
+    end
     if params[:query].present?
       @bikes = Bike.search_globally(params[:query])
     else
