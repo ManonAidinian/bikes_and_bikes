@@ -1,57 +1,27 @@
 <div class="container">
 
-<div class="page-title">
-  <h1>Bikes for rent :</h1>
-  <hr>
-</div>
-
-<%# map! %>
-<div class="col-6">
-<div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>">
-</div>
-</div>
-
-
-<div class="raw">
-<div class="cards">
-  <% @bikes.each do |bike| %>
-
-<div class="col-6">
-
-  <div class="bike-card-small-rated">
-
-    <div class="bike-card-small-rated-header">
-      <div class="star-container">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-      </div>
-      <i class="far fa-heart"></i>
-    </div>
-
-    <div class="bike-card-small-rated-text">
-    <% bike.pictures.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 200, width: 400, crop: :fill %>
-    <% end %>
-    <div class="text">
-      <h3><%=link_to "#{bike.maker} #{bike.model}", bike_path(bike) %></h3>
-      <p>
-      <%# <%= bike.year  %>
-        <%# <%= bike.description  %>
-        <%= bike.category  %> |
-        <%= bike.location  %> |
-        <%# <%= bike.mileage  %>
-        <%= bike.daily_price.truncate  %>IDR</p>
-      </div>
-    </div>
+  <div class="page-title">
+    <h1>Bikes for rent :</h1>
+    <hr>
   </div>
-</div>
 
-<% end  %>
+  <div class="card-map-container">
+
+    <div class="map" style="width: 100%; height: 600px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>">
+    </div>
+
+
+
+
+    <div class="cards">
+      <% @bikes.each do |bike| %>
+        <%= render "bike", bike: bike %>
+      <% end  %>
+    </div>
+
+  </div>
 
 </div>
