@@ -13,4 +13,7 @@ class Bike < ApplicationRecord
   CATEGORIES = ["Scooter", "Dirt-bike", "Chopper", "Sport", "Naked", "Other"]
   validates :model, :category, :location, :year, :mileage, :maker, :daily_price, :description, presence: true
   validates :category, inclusion: { in: CATEGORIES }
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
