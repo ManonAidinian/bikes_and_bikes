@@ -1,17 +1,16 @@
 class BikesController < ApplicationController
 
   def index
-    @bikes = Bike.all
+    if params[:query].present?
+      @bikes = Bike.search_globally(params[:query])
+    else
+      @bikes = Bike.all
+    end
     @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,
         lng: bike.longitude
       }
-    end
-    if params[:query].present?
-      @bikes = Bike.search_globally(params[:query])
-    else
-      @bikes = Bike.all
     end
   end
 
