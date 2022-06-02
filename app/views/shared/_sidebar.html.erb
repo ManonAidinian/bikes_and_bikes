@@ -1,0 +1,33 @@
+<div class="profile-card">
+<img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+  <div>
+    <div>
+      <h2>About Me</h2>
+      <%= "#{current_user.first_name} #{current_user.last_name}" %>
+    </div>
+    <div>
+      <p>Midway attempted to put Chuck Norris into Mortal Kombat but decided against it due to programming errors with each button performing a roundhouse kick.</p>
+    </div>
+    <div class="confirmation">
+      <i class="fas fa-at"> Email Confirmed</i> <br>
+      <i class="fas fa-mobile-alt"> Mobile Confirmed</i>
+    </div>
+    <br>
+    <br>
+    <div id="edit-profile">
+        <%= link_to "Edit Profile", edit_user_registration_path, class: 'button secondary-btn btn-txt-body-primary button-block' %>
+    </div>
+    <div>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class="profile-card-buttons">
+  <div class="btn-ghost"> <%= link_to "My Bikes", "#mybikes" %></div>
+  <div class="btn-ghost"><%= link_to "My Bookings", "#mybookings" %></div>
+  <div class="btn-ghost">    <%= link_to "My Bookings", "#bookingrequests" %></div>
+  </div>
+  <div>
+    <br>
+  </div>
+</div>
