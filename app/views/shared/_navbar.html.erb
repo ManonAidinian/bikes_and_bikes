@@ -1,13 +1,13 @@
 <div class="nav">
   <%= link_to root_path do %>
     <%= image_tag "logo.png", alt: "logo", class: "logo" %>
-  <% end %>    
+  <% end %>
     <ul class="nav-links lu">
       <li class="nav-linky li">
         <%= link_to "Find a Bike", bikes_path, class: 'button primary-btn btn-txt-body-primary button-block' %>
       </li>
       <li class = "nav-linky li">
-        <%= link_to "Host a Bike", new_bike_path, class: 'button seconday-btn btn-txt-body-primary button-block' %>
+        <%= link_to "Host a Bike", new_bike_path, class: 'button secondary-btn btn-txt-body-primary button-block' %>
       </li>
     <% if user_signed_in? %>
       <li class = "nav-linky li">

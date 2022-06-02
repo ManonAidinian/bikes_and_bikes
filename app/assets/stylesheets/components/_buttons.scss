@@ -18,12 +18,13 @@
 
 // second button size
 .secondary-btn {
-  color: $tertiary;
+  background: $tertiary;
+  color: $secondary;
   padding: 12px 20px;
   height: 47px;
 }
 
-// second button size
+// third button size
 .tertiary-btn {
   color: $secondary;
   padding: 15px 25px;
