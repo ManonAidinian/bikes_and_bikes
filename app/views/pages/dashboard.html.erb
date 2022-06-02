@@ -1,13 +1,11 @@
 <div class="sidebar">
 
-<h1>Sidebar</h1>
     <%= render 'shared/sidebar' %>
-<p>Avatar</p>
 
 <div class="container">
 <h1>Main page</h1>
 
-<h2>Hello<%= " #{current_user.first_name} #{current_user.last_name}" %></h2>
+<h2>Hello<%= "#{current_user.first_name} #{current_user.last_name}" %></h2>
 <p><small><%= " Joined #{current_user.created_at}" %></small></p>
 
 <h2 id="mybikes">My Bikes</h2>
