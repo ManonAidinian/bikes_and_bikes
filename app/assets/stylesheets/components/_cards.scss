@@ -177,8 +177,27 @@
   padding: 16px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: center;
+}
+
+.profile-card {
+  overflow: hidden;
+  width: 279px;
+  height: 100%;
+  background-color: $secondary;
+  box-shadow: 3px 3px 15px $primary;
+  display: flex;
+  align-items: center;
+  border-radius: $b-rad;
+  flex-direction: column;
+}
+
+.profile-card #edit-profile {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card-buttons {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }

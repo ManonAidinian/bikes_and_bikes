@@ -36,3 +36,14 @@
   padding: 10px 18px;
   height: 40px;
 }
+
+.btn-ghost {
+  color: $primary;
+  padding: 8px 24px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
