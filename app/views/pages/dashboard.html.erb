@@ -1,26 +1,16 @@
 <div class="sidebar">
 
 <h1>Sidebar</h1>
-
+    <%= render 'shared/sidebar' %>
 <p>Avatar</p>
 
-<%= image_tag(current_user.avatar_picture) %>
-<p>About me?</p>
-<p><%= "I'm a legendary biker" %></p>
-<p><%= "Name: #{current_user.first_name} #{current_user.last_name}" %></p>
-<p><%= "Email: #{current_user.email}" %></p>
-<%= link_to 'My Bikes', '/dashboard#my_bikes' %>
-<%= link_to "Booking Requests", '/dashboard#booking_requests' %>
-<%= link_to "Bikes I book", '/dashboard#bikes_i_book' %>
-<%= link_to "Upcoming Bookings", '/dashboard#my_bikes' %>
-</div>
 <div class="container">
 <h1>Main page</h1>
 
 <h2>Hello<%= " #{current_user.first_name} #{current_user.last_name}" %></h2>
 <p><small><%= " Joined #{current_user.created_at}" %></small></p>
 
-<h2>My own bikes</h2>
+<h2 id="mybikes">My Bikes</h2>
 <%= link_to "Add new bike", '/bikes/new' %>
 
 <% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
@@ -38,7 +28,7 @@
 
 <%= link_to "View all", '/dashboard#my_bikes' %>
 
-<h2>My bookings</h2>
+<h2 id="mybookings">My bookings</h2>
 
 <% current_user.bookings.first(4).each do |booking| %>
 <div class="card p-2 m-2">
@@ -55,7 +45,7 @@
 
 <%= link_to "View all my bookings", '/dashboard#bookings' %>
 
-<h2>Received bookings</h2>
+<h2 id="bookingrequests">Booking Requests</h2>
 
 <% current_user.received_bookings.first(4).each do |booking| %>
 <div class="card p-2">

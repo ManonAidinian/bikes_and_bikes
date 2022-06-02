@@ -4,6 +4,21 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 225px;
+    max-width: 225px;
     height: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.aboutme h3 {
+    font-size: 15px;
+    font-weight: 700;
+    align-items: center;
+}
+
+.aboutme p {
+    font-size: 12px;
+}
+.textverif {
+text-decoration: none;
 }

@@ -2,38 +2,39 @@
 
   <div class="top-profile">  
     <div class="avatar">
-    <%= image_tag(@user.avatar_picture) %>
+    <%# <%= image_tag(@user.avatar_picture) %>
     </div>
 
     <div class="aboutme">
     <h3>About Me</h3>
+    <p><%= "Name: #{current_user.first_name} #{current_user.last_name}" %></p>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
     </div>
 
     <div class="textverif">
     <ul>
-        <li>Email Confirmed</li>
+        <li><%= "Email: #{current_user.email}" %></li>
         <li>Mobile Confirmed</li>
     </ul>
     </div>
 
 
     <div class="editprof-btn">
-    <%= link_to "Edit Profile", styleguide_path, class: 'button primary-btn btn-txt-body-primary' %>
+    <%= link_to "Edit Profile", edit_user_registration_path, class: 'button primary-btn btn-txt-body-primary' %>
     </div>
   </div>
   
   <div class="bottom-profile">
     <div class="action-btn">
+    <%= link_to "My Bikes", "#mybikes" %>
     </div>
 
     <div class="action-btn">
+    <%= link_to "My Bookings", "#mybookings" %>
     </div>
 
     <div class="action-btn">
-    </div>
-
-    <div class="action-btn">
+    <%= link_to "My Bookings", "#bookingrequests" %>
     </div>
   </div>
 
