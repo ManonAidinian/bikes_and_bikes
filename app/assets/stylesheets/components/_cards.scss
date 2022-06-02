@@ -149,19 +149,55 @@
 }
 .card-product {
   overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 400px;
+  width: fit-content;
+  background: $secondary;
+  box-shadow: 3px 3px 15px $primary;
   display: flex;
   align-items: center;
+  border-radius: $b-rad;
 }
 
 .card-product img {
-  height: 100%;
-  width: 120px;
+  height: 400px;
+  width: fit-content;
   object-fit: cover;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-product .bike-price-med-vert {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  overflow: hidden;
+  width: 279px;
+  height: 100%;
+  background-color: $secondary;
+  box-shadow: 3px 3px 15px $primary;
+  display: flex;
+  align-items: center;
+  border-radius: $b-rad;
+  flex-direction: column;
+}
+
+.profile-card #edit-profile {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
