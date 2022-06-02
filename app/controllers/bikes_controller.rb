@@ -16,6 +16,8 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
+    @bike_avg_rating = @bike.reviews.average(:bike_rating)
+    @owner_avg_rating = @bike.reviews.average(:owner_rating)
   end
 
   def new

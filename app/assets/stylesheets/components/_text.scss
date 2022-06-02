@@ -109,12 +109,10 @@ h1 {
   color: $primary;
 }
 
-.profile-card .confirmation {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-around;
-  justify-content: center;
-  align-items: center;
-  color: $primary;
+.confirmation {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
 }

@@ -181,15 +181,25 @@
 }
 
 .profile-card {
+  position: sticky;
   overflow: hidden;
   width: 279px;
   height: 100%;
   background-color: $secondary;
-  box-shadow: 3px 3px 15px $primary;
   display: flex;
   align-items: center;
-  border-radius: $b-rad;
   flex-direction: column;
+  padding: 30px;
+}
+
+.profile-card .confirmation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
+  color: $primary;
 }
 
 .profile-card #edit-profile {
