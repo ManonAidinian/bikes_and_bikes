@@ -1,6 +1,6 @@
 <div class="header">
     <div class="content">
-      <h1>Welcome to B&B</h1>
+      <h1 class="banner-title">Welcome to B&B</h1>
       <form>
       <input type="text" placeholder="Select a model">
       <button type="submit"> Find Bike </button>
@@ -8,45 +8,45 @@
     </div>
 </div>
 
-<div class="my-container">
+<%# <div class="my-container">
   <h2>Latest on the bike Listing</h2>
-    <div class="row">
-          <% Bike.first(4).each do |bike| %>
-          <div class="col">
-            <div class="bike-card-small-rated">
-              <%= image_tag "nmax1.jpg", alt: "Nmax 155", class: "bike" %>
-              <p><%= bike.maker  %> |
-                <%= bike.model  %> |
-                <%= bike.year  %> |
-                <%= bike.location  %> |
-                <%= bike.longitude  %> |
-                <%= bike.latitude  %> |
-                <%= bike.mileage  %>
-              </p>
+    <div class="row"> %>
+          <%# <% Bike.first(4).each do |bike| %>
+          <%# <div class="col">
+            <div class="bike-card-small-rated"> %>
+              <%# <%= image_tag "nmax1.jpg", alt: "Nmax 155", class: "bike" %>
+              <%# <p><%= bike.maker  %>
+                <%# <%= bike.model  %>
+                <%# <%= bike.year  %>
+                <%# <%= bike.location  %>
+                <%# <%= bike.longitude  %>
+                <%# <%= bike.latitude  %>
+                <%# <%= bike.mileage  %>
+              <%# </p>
             </div>
-          </div>
-        <% end  %>
-        <%= link_to "View All Bikes", '/bikes' %>
-    </div>
+          </div> %>
+        <%# <% end  %>
+        <%# <%= link_to "View All Bikes", '/bikes' %>
+    <%# </div>
   </div>
   <h2>Top Rated Bikes</h2>
-    <div class="row">
-          <% Bike.first(4).each do |bike| %>
-          <div class="col">
-            <div class="bike-card-small-rated">
-              <%= image_tag "nmax1.jpg", alt: "Nmax 155", class: "bike" %>
-              <p><%= bike.maker  %> |
-                <%= bike.model  %> |
-                <%= bike.year  %> |
-                <%= bike.location  %> |
-                <%= bike.longitude  %> |
-                <%= bike.latitude  %> |
-                <%= bike.mileage  %>
-              </p>
+    <div class="row"> %>
+          <%# <% Bike.first(4).each do |bike| %>
+          <%# <div class="col">
+            <div class="bike-card-small-rated"> %>
+              <%# <%= image_tag "nmax1.jpg", alt: "Nmax 155", class: "bike" %>
+              <%# <p><%= bike.maker  %>
+                <%# <%= bike.model  %>
+                <%# <%= bike.year  %>
+                <%# <%= bike.location  %>
+                <%# <%= bike.longitude  %>
+                <%# <%= bike.latitude  %>
+                <%# <%= bike.mileage  %>
+              <%# </p>
             </div>
-          </div>
-        <% end  %>
-        <%= link_to "View All Bikes", '/bikes' %>
-  </div>
+          </div> %>
+        <%# <% end  %>
+        <%# <%= link_to "View All Bikes", '/bikes' %>
+  <%# </div>
  </div>
-</div>
+</div> %>
