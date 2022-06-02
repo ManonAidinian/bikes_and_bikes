@@ -23,7 +23,7 @@ i = 0
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name
   )
-  avatar_picture = URI.open('https://loremflickr.com/300/200/human')
+  avatar_picture = URI.open('https://loremflickr.com/100/100/human')
   p "Downloading random picture for a person"
   user.avatar_picture.attach(io: avatar_picture, filename: "#{user.first_name}_#{user.last_name}.png", content_type: 'image/png')
   user.save!
@@ -43,9 +43,12 @@ i = 0
       description: "The best #{Bike::CATEGORIES.sample} you can get for money. Chuck Norris has this bike, that's why #{Faker::ChuckNorris.fact}",
       user: user
     )
-    bike_picture = URI.open('https://loremflickr.com/300/200/motorbike')
-    bike.pictures.attach(io: bike_picture, filename: "#{bike.maker}_#{bike.model}.png", content_type: 'image/png')
-    p "|—— Downloading random picture for a bike"
+    p "|—— Adding random pictures for a bike"
+    rand(1..6).times do
+      bike_picture = URI.open('https://loremflickr.com/300/200/motorbike')
+      bike.pictures.attach(io: bike_picture, filename: "#{bike.maker}_#{bike.model}.png", content_type: 'image/png')
+      p "   |—— Downloading picture for a bike"
+    end
     # picture = Cloudinary::Uploader.upload('https://loremflickr.com/300/200/motorbike')
     bike.save!
   end
