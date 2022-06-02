@@ -3,7 +3,7 @@ class Bike < ApplicationRecord
   pg_search_scope :search_globally,
     against: [ :model, :category, :location, :year, :mileage, :maker, :daily_price, :description ],
     using: {
-      tsearch: { prefix: true } 
+      tsearch: { prefix: true }
     }
 
   belongs_to :user

@@ -33,9 +33,9 @@ i = 0
       maker: ['Yamaha', 'Kawasaki', 'Honda', 'Gesits', 'Suzuki', 'Harley Davidson', 'Triumph'].sample,
       model: %w[C D F G H J K M N P Q R T V W X Y Z].sample(3).join + rand(1..6).to_s + rand(10).to_s + %w{0 5}.sample,
       category: Bike::CATEGORIES.sample,
-      location: "#{Faker::Address.city}, #{Faker::Address.country}",
-      latitude: Faker::Address.latitude,
-      longitude: Faker::Address.longitude,
+      location: %w[Paris London Jakarta Moscow Bogota Singapore Hanoi Barcelona Rome Sofia].sample,
+      # latitude: Faker::Address.latitude,
+      # longitude: Faker::Address.longitude,
       year: rand(1900..2022),
       mileage: rand(500_000),
       available: (rand(2) == 1),
@@ -43,7 +43,7 @@ i = 0
       description: "The best #{Bike::CATEGORIES.sample} you can get for money. Chuck Norris has this bike, that's why #{Faker::ChuckNorris.fact}",
       user: user
     )
-    bike_picture = URI.open('https://loremflickr.com/300/200/motorbike')
+    bike_picture = URI.open('https://source.unsplash.com/random/?motorbike')
     bike.pictures.attach(io: bike_picture, filename: "#{bike.maker}_#{bike.model}.png", content_type: 'image/png')
     p "|—— Downloading random picture for a bike"
     # picture = Cloudinary::Uploader.upload('https://loremflickr.com/300/200/motorbike')
