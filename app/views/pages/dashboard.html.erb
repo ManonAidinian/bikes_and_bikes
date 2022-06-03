@@ -1,87 +1,55 @@
-<div class="sidebar">
-  <%= render 'shared/sidebar' %>
-</div>
-
-<div class="dashboard-container">
-  <div class="title">
-    <h1>Dashboard</h1>
+<% if user_signed_in?%>
+<div class="complete-dashboard">
+  <div class="sidebar">
+    <%= render 'shared/sidebar' %>
   </div>
 
-  <div class="intro">
-    <h2>Hello<%= " #{current_user.first_name} #{current_user.last_name}" %></h2>
-    <p><small><%= " Joined #{current_user.created_at}" %></small></p>
-  </div> <%#div intro end %>
-
-  <div class="mybikes">
-    <h2 id="mybikes">My Bikes</h2>
-    <%= link_to "Add new bike", '/bikes/new' %>
-
-<<<<<<< HEAD
-    <% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
-    <div class="card p-2">
-        <%= image_tag(bike.pictures.first) %>
-        <p><%= bike.maker  %> |
-          <%= bike.model  %> |
-          <%= bike.year  %> |
-          <%= bike.location  %> |
-          <%= bike.longitude  %> |
-          <%= bike.latitude  %> |
-          <%= bike.mileage  %></p>
-          <% end  %>
-    <%= link_to "View all", '/dashboard#my_bikes' %>
+  <div class="dashboard-container">
+    <div class="title">
+      <h1>Dashboard</h1>
     </div>
-=======
-<% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
 
+    <div class="intro">
+      <h2>Hello<%= " #{current_user.first_name} #{current_user.last_name}" %></h2>
+      <p><small><%= " Joined #{current_user.created_at}" %></small></p>
+    </div> <%#div intro end %>
+
+    <div class="mybikes">
+      <h2 id="mybikes">My Bikes</h2>
+      <%= link_to "Add new bike", '/bikes/new' %>
+      <%# horizontal card ----------------------- %>
+      <% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
+        <div class="card-horizontal">
+          <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
+
+          <div class="card-horizontal-infos">
+            <div class="horiz-card-text">
+              <h2><%="#{bike.maker} #{bike.model}"%></h2>
+              <p><%= bike.category  %></p>
+              <p id="price"><%= bike.daily_price.truncate  %><span> IDR/day</span></p>
+            </div>
+            <div class="horiz-card-available">
+              AVAILABLE
+            </div>
+          </div>
+        </div>
+      <% end  %>
+    </div>
+  <%#div my bikes end %>
 <%# horizontal card ----------------------- %>
-<div class="card-horizontal">
-  <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
-
-  <div class="card-horizontal-infos">
-
-    <div class="horiz-card-text">
-      <h2><%="#{bike.maker} #{bike.model}"%></h2>
-      <p><%= bike.category  %></p>
-      <p id="price"><%= bike.daily_price.truncate  %><span> IDR/day</span></p>
-    </div>
-
-    <div class="horiz-card-available">
-      AVAILABLE
-    </div>
-
-  </div>
-
-</div>
-<%# horizontal card ----------------------- %>
-
-<% end  %>
-<%# <div class="card p-2">
-  <%= image_tag(bike.pictures.first) %>
-  <%# <p><%= bike.maker  %>
-    <%# <%= bike.model  %>
-    <%# <%= bike.year  %>
-    <%# <%= bike.location  %>
-    <%# <%= bike.longitude  %>
-    <%# <%= bike.latitude  %>
-    <%# <%= bike.mileage  %>
-<%# </div> %>
-<%# <% end  %>
->>>>>>> 54442223130171a6ab1386af1b495fb265de6da5
-
-    
     <div class="mybookings">
       <h2 id="mybookings">My bookings</h2>
 
       <% current_user.bookings.first(4).each do |booking| %>
-      <div class="card p-2 m-2">
-        <p> Current status: <%= booking.status  %> | <small><%= booking.created_at  %></small> </p>
-        <p> I ordered
-          <%= image_tag(booking.bike.pictures.first) %>
-          <%= booking.bike.maker  %> |
-          <%= booking.bike.model  %> |
-          <%= booking.bike.year  %></p>
-        <p>From: <%= booking.bike.user.first_name  %> <%= booking.bike.user.last_name  %> (<%= booking.bike.user.email  %>)</p>
-      </div>
+        <div class="card p-2 m-2">
+          <p> Current status: <%= booking.status  %> | <small><%= booking.created_at  %></small> </p>
+          <p> I ordered
+            <%= image_tag(booking.bike.pictures.first) %>
+            <%= booking.bike.maker  %> |
+            <%= booking.bike.model  %> |
+            <%= booking.bike.year  %></p>
+          <p>From: <%= booking.bike.user.first_name  %> <%= booking.bike.user.last_name  %> (<%= booking.bike.user.email  %>)</p>
+        </div>
       <% end  %>
 
       <%= link_to "View all my bookings", '/dashboard#bookings' %>
@@ -91,25 +59,29 @@
       <h2 id="bookingrequests">Booking Requests</h2>
 
       <% current_user.received_bookings.first(4).each do |booking| %>
-      <div class="card p-2">
-        <p><%= booking.status  %> |
-          <%= booking.bike.maker  %> |
-          <%= booking.bike.model  %> |
-          <%= booking.bike.year  %></p>
-          <p><%= booking.user.email  %> |
-          <%= booking.user.first_name  %> |
-          <%= booking.user.last_name  %>
-        </p>
-      </div>
+        <div class="card p-2">
+          <p><%= booking.status  %> |
+            <%= booking.bike.maker  %> |
+            <%= booking.bike.model  %> |
+            <%= booking.bike.year  %></p>
+            <p><%= booking.user.email  %> |
+            <%= booking.user.first_name  %> |
+            <%= booking.user.last_name  %>
+          </p>
+        </div>
       <% end  %>
 
       <%= link_to "View all received bookings", '/dashboard#bookings' %>
     </div><%#div my bookingrequest end %>
   </div> <%#div container end %>
 
+</div>
+<% else %>
+  <p>In order to see the dashboard, you must be logged in</p>
+  <%= link_to "Sign In", new_user_session_path, class:'button primary-btn btn-txt-body-primary button-block' %><br>
+  <%= link_to "Sign Up", new_user_registration_path, class:'button primary-btn btn-txt-body-primary button-block' %>
 
-
-
+<% end %>
 <div class="footer">
   <h1>Footer</h1>
 </div> <%# closing div for /footer %>
