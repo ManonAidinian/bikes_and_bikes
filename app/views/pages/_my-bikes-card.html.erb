@@ -1,5 +1,5 @@
 <% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
-  <%= link_to bike_path(bike) do %>
+  <%= link_to bike_path(bike), class: "text-decoration-none" do %>
     <div class="card-horizontal">
       <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
       <div class="card-horizontal-infos">
@@ -15,4 +15,3 @@
     </div>
   <% end  %>
 <% end  %>
-
