@@ -11,45 +11,48 @@
 <h2 id="mybikes">My Bikes</h2>
 <%= link_to "Add new bike", '/bikes/new' %>
 
+<%# horizontal card my-bikes----------------------- %>
 <% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
-
-<%# horizontal card ----------------------- %>
-<div class="card-horizontal">
-  <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
-
-  <div class="card-horizontal-infos">
-
-    <div class="horiz-card-text">
-      <h2><%="#{bike.maker} #{bike.model}"%></h2>
-      <p><%= bike.category  %></p>
-      <p id="price"><%= bike.daily_price.truncate  %><span> IDR/day</span></p>
+  <div class="card-horizontal">
+    <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
+    <div class="card-horizontal-infos">
+      <div class="horiz-card-text">
+        <h2><%="#{bike.maker} #{bike.model}"%></h2>
+        <p><%= bike.category  %></p>
+        <p id="price"><%= bike.daily_price.truncate  %><span> IDR/day</span></p>
+      </div>
+      <div class="horiz-card-available">
+        AVAILABLE
+      </div>
     </div>
-
-    <div class="horiz-card-available">
-      AVAILABLE
-    </div>
-
   </div>
-
-</div>
-<%# horizontal card ----------------------- %>
-
 <% end  %>
-<%# <div class="card p-2">
-  <%= image_tag(bike.pictures.first) %>
-  <%# <p><%= bike.maker  %>
-    <%# <%= bike.model  %>
-    <%# <%= bike.year  %>
-    <%# <%= bike.location  %>
-    <%# <%= bike.longitude  %>
-    <%# <%= bike.latitude  %>
-    <%# <%= bike.mileage  %>
-<%# </div> %>
-<%# <% end  %>
+<%# horizontal card my-bikes----------------------- %>
 
 <%= link_to "View all", '/dashboard#my_bikes' %>
 
 <h2 id="mybookings">My bookings</h2>
+
+<%# horizontal card my-bookings----------------------- %>
+<% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
+  <div class="card-horizontal">
+    <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
+    <div class="card-horizontal-infos">
+      <div class="horiz-card-text">
+        <h2><%="#{bike.maker} #{bike.model}"%></h2>
+        <p>bike.booking.start date to bike.booking.start date</p>
+        <%# <p id="price"><%= bike.daily_price.truncate  %>
+        <%# <span> IDR/day</span></p> %>
+        <p id="price">Total : <%= bike.daily_price.truncate  %> * days? <span> IDR</span></p>
+      </div>
+      <div class="horiz-card-available">
+        CANCEL BOOKING
+      </div>
+    </div>
+  </div>
+<% end  %>
+<%# horizontal card my-bookings----------------------- %>
+
 
 <% current_user.bookings.first(4).each do |booking| %>
 <div class="card p-2 m-2">
@@ -67,6 +70,27 @@
 <%= link_to "View all my bookings", '/dashboard#bookings' %>
 
 <h2 id="bookingrequests">Booking Requests</h2>
+
+
+<%# horizontal card my-booking requests----------------------- %>
+<% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
+  <div class="card-horizontal">
+    <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
+    <div class="card-horizontal-infos">
+      <div class="horiz-card-text">
+        <h2><%="#{bike.maker} #{bike.model}"%></h2>
+        <p>bike.booking.start date to bike.booking.start date</p>
+        <%# <p id="price"><%= bike.daily_price.truncate  %>
+        <%# <span> IDR/day</span></p> %>
+        <p id="price">Total : <%= bike.daily_price.truncate  %> * days? <span> IDR</span></p>
+      </div>
+      <div class="horiz-card-available">
+        SEE DETAILS / ACCEPT / REJECT
+      </div>
+    </div>
+  </div>
+<% end  %>
+<%# horizontal card my-bookings requests----------------------- %>
 
 <% current_user.received_bookings.first(4).each do |booking| %>
 <div class="card p-2">
