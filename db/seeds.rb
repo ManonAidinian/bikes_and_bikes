@@ -45,7 +45,7 @@ i = 0
     )
     p "|—— Adding random pictures for a bike"
     rand(1..6).times do
-      bike_picture = URI.open('https://source.unsplash.com/random/?motorbike')
+      bike_picture = URI.open("https://source.unsplash.com/random/?#{['motorbike', 'motorcycle', 'scooter'].sample}")
       bike.pictures.attach(io: bike_picture, filename: "#{bike.maker}_#{bike.model}.png", content_type: 'image/png')
       p "   |—— Downloading picture for a bike"
     end
