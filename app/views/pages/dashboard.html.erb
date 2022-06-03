@@ -1,4 +1,3 @@
-<% if user_signed_in?%>
 <div class="complete-dashboard">
   <div class="sidebar">
     <%= render 'shared/sidebar' %>
@@ -17,7 +16,8 @@
     <div class="mybikes">
       <h2 id="mybikes">My Bikes</h2>
       <%= link_to "Add new bike", '/bikes/new' %>
-      <%# horizontal card ----------------------- %>
+
+<%# MANON'S my bikes horizontal card ----------------------- %>
       <% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
         <div class="card-horizontal">
           <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
@@ -34,12 +34,13 @@
           </div>
         </div>
       <% end  %>
-    </div>
-  <%#div my bikes end %>
-<%# horizontal card ----------------------- %>
+    </div> <%#div my bikes end %>
+<%# END MANON'S my bikes horizontal card ----------------------- %>
+    
     <div class="mybookings">
       <h2 id="mybookings">My bookings</h2>
 
+<%# MAX'S my-bookings----------------------- %>
       <% current_user.bookings.first(4).each do |booking| %>
         <div class="card p-2 m-2">
           <p> Current status: <%= booking.status  %> | <small><%= booking.created_at  %></small> </p>
@@ -53,61 +54,8 @@
       <% end  %>
 
       <%= link_to "View all my bookings", '/dashboard#bookings' %>
-    </div><%#div my bookings end %>
-
-    <div class="bookingrequests">
-      <h2 id="bookingrequests">Booking Requests</h2>
-
-      <% current_user.received_bookings.first(4).each do |booking| %>
-        <div class="card p-2">
-          <p><%= booking.status  %> |
-            <%= booking.bike.maker  %> |
-            <%= booking.bike.model  %> |
-            <%= booking.bike.year  %></p>
-            <p><%= booking.user.email  %> |
-            <%= booking.user.first_name  %> |
-            <%= booking.user.last_name  %>
-          </p>
-        </div>
-      <% end  %>
-
-      <%= link_to "View all received bookings", '/dashboard#bookings' %>
-    </div><%#div my bookingrequest end %>
-  </div> <%#div container end %>
-
-=======
-<div class="container">
-<h1>Main page</h1>
-
-<h2>Hello<%= "#{current_user.first_name} #{current_user.last_name}" %></h2>
-<p><small><%= " Joined #{current_user.created_at}" %></small></p>
-
-<h2 id="mybikes">My Bikes</h2>
-<%= link_to "Add new bike", '/bikes/new' %>
-
-<%# horizontal card my-bikes----------------------- %>
-<% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
-  <div class="card-horizontal">
-    <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
-    <div class="card-horizontal-infos">
-      <div class="horiz-card-text">
-        <h2><%="#{bike.maker} #{bike.model}"%></h2>
-        <p><%= bike.category  %></p>
-        <p id="price"><%= bike.daily_price.truncate  %><span> IDR/day</span></p>
-      </div>
-      <div class="horiz-card-available">
-        AVAILABLE
-      </div>
-    </div>
-  </div>
-<% end  %>
-<%# horizontal card my-bikes----------------------- %>
-
-<%= link_to "View all", '/dashboard#my_bikes' %>
-
-<h2 id="mybookings">My bookings</h2>
-
-<%# horizontal card my-bookings----------------------- %>
+<%# MAX'S my-bookings----------------------- %>
+<%# MANONS card my-bookings----------------------- %>
 <% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
   <div class="card-horizontal">
     <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
@@ -125,28 +73,29 @@
     </div>
   </div>
 <% end  %>
-<%# horizontal card my-bookings----------------------- %>
+<%# END MANONS card my-bookings----------------------- %>
 
 
-<% current_user.bookings.first(4).each do |booking| %>
-<div class="card p-2 m-2">
-  <p> Current status: <%= booking.status  %> | <small><%= booking.created_at  %></small> </p>
-  <p> I ordered
-    <%= image_tag(booking.bike.pictures.first) %>
-    <%= booking.bike.maker  %> |
-    <%= booking.bike.model  %> |
-    <%= booking.bike.year  %></p>
-  <p>From: <%= booking.bike.user.first_name  %> <%= booking.bike.user.last_name  %> (<%= booking.bike.user.email  %>)</p>
+    </div><%#div my bookings end %>
 
-</div>
-<% end  %>
+    <div class="bookingrequests">
+      <h2 id="bookingrequests">Booking Requests</h2>
 
-<%= link_to "View all my bookings", '/dashboard#bookings' %>
-
-<h2 id="bookingrequests">Booking Requests</h2>
-
-
-<%# horizontal card my-booking requests----------------------- %>
+<%# MAX'S card booking request ----------------------- %>
+      <% current_user.received_bookings.first(4).each do |booking| %>
+        <div class="card p-2">
+          <p><%= booking.status  %> |
+            <%= booking.bike.maker  %> |
+            <%= booking.bike.model  %> |
+            <%= booking.bike.year  %></p>
+            <p><%= booking.user.email  %> |
+            <%= booking.user.first_name  %> |
+            <%= booking.user.last_name  %>
+          </p>
+        </div>
+      <% end  %>
+<%# MAX'S card booking request ----------------------- %>
+<%# MANONS horizontal card my-booking requests----------------------- %>
 <% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
   <div class="card-horizontal">
     <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
@@ -164,26 +113,13 @@
     </div>
   </div>
 <% end  %>
-<%# horizontal card my-bookings requests----------------------- %>
+<%# END MANONS horizontal card my-bookings requests----------------------- %>
 
-<% current_user.received_bookings.first(4).each do |booking| %>
-<div class="card p-2">
-  <p><%= booking.status  %> |
-    <%= booking.bike.maker  %> |
-    <%= booking.bike.model  %> |
-    <%= booking.bike.year  %></p>
-    <p><%= booking.user.email  %> |
-    <%= booking.user.first_name  %> |
-    <%= booking.user.last_name  %>
-  </p>
-
+      <%= link_to "View all received bookings", '/dashboard#bookings' %>
+    </div><%#div my bookingrequest end %>
+  
+</div> <%#div container end %>
 </div>
-<% else %>
-  <p>In order to see the dashboard, you must be logged in</p>
-  <%= link_to "Sign In", new_user_session_path, class:'button primary-btn btn-txt-body-primary button-block' %><br>
-  <%= link_to "Sign Up", new_user_registration_path, class:'button primary-btn btn-txt-body-primary button-block' %>
-
-<% end %>
 <div class="footer">
   <h1>Footer</h1>
 </div> <%# closing div for /footer %>
