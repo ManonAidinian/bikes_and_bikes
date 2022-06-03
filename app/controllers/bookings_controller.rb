@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking.status = 'pending'
     @booking.total_price = (@booking.end_date - @booking.start_date).to_i * @bike.daily_price
     if @booking.save
-      regit push direct_to dashboard_path
+      redirect_to dashboard_path
     else
       render 'bikes/show'
     end
