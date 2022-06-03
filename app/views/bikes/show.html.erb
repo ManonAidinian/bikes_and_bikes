@@ -31,7 +31,7 @@
     <div class="col-4 text-center my-5">
       <h1><%= @bike.daily_price.truncate.to_s.reverse.gsub(/...(?=.)/,'\& ').reverse %> <small class="text-muted fw-light">IDR / Day</small></h1>
       <p class="text-muted fw-light"><%= (@bike.daily_price.truncate * 30).to_s.reverse.gsub(/...(?=.)/,'\& ').reverse %>IDR / month</p>
-      <%= link_to "Rent this bike", bookings_new_path, class: 'button secondary-btn btn-txt-body-primary mx-auto mt-5' %>
+      <button type="button" style="color: #0B3954; border: 0" class="button btn-txt-body-primary secondary-btn mx-auto mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Rent this bike</button>
         <br/><%= cl_image_tag @bike.user.avatar_picture.key, class: "avatar-for-bike-page mt-3" %>
         <p>
           <%= "#{@bike.user.first_name} #{@bike.user.last_name}" %><br>
@@ -104,13 +104,13 @@
 
   <div class="row mt-5">
     <div class="col-12">
-      <%= @bike.reviews.count > 0 ? "<h2>Bike reviews</h2>" : "" %>
+      <h2><%= @bike.reviews.count > 0 ? "Bike reviews" : "" %></h2>
 
       <% @bike.reviews.each do |review| %>
         <div class="card mb-4">
           <div class="card-header">
-            Bike rating: <%= review.bike_rating %> |
-            Owner rating: <%= review.owner_rating %>
+            Bike rating: <strong><%= review.bike_rating %></strong> |
+            Owner rating: <strong><%= review.owner_rating %></strong>
           </div>
           <div class="card-body">
             <blockquote class="blockquote mb-0">
@@ -129,4 +129,5 @@
 
 </div>
 
+<%= render "bookings/new", bike: @bike, owner: @bike.user, user: current_user %>
     <%# <%= cl_image_tag @bike.pictures.first&.key %>
