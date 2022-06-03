@@ -1,3 +1,65 @@
+.card-horizontal {
+  overflow: hidden;
+  height: 150px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.card-horizontal img {
+  height: 100%;
+  width: 150px;
+  object-fit: cover;
+}
+
+.card-horizontal-infos {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.horiz-card-text h2 {
+  color: $primary;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.horiz-card-text p {
+  color: grey;
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+// .card-horizontal .card-horizontal-infos {
+//   padding: 16px;
+// }
+
+.horiz-card-available {
+  color: $primary;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+#price {
+  color: $primary;
+  opacity: 1;
+  font-weight: bold;
+  span {
+    color: grey;
+    font-weight: lighter;
+  }
+}
+
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
