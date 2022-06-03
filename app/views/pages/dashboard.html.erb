@@ -1,67 +1,77 @@
 <div class="sidebar">
-
-    <%= render 'shared/sidebar' %>
-
-<div class="container">
-<h1>Main page</h1>
-
-<h2>Hello<%= "#{current_user.first_name} #{current_user.last_name}" %></h2>
-<p><small><%= " Joined #{current_user.created_at}" %></small></p>
-
-<h2 id="mybikes">My Bikes</h2>
-<%= link_to "Add new bike", '/bikes/new' %>
-
-<% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
-<div class="card p-2">
-  <%= image_tag(bike.pictures.first) %>
-  <p><%= bike.maker  %> |
-    <%= bike.model  %> |
-    <%= bike.year  %> |
-    <%= bike.location  %> |
-    <%= bike.longitude  %> |
-    <%= bike.latitude  %> |
-    <%= bike.mileage  %></p>
+  <%= render 'shared/sidebar' %>
 </div>
-<% end  %>
 
-<%= link_to "View all", '/dashboard#my_bikes' %>
+<div class="dashboard-container">
+  <div class="title">
+    <h1>Dashboard</h1>
+  </div>
 
-<h2 id="mybookings">My bookings</h2>
+  <div class="intro">
+    <h2>Hello<%= " #{current_user.first_name} #{current_user.last_name}" %></h2>
+    <p><small><%= " Joined #{current_user.created_at}" %></small></p>
+  </div> <%#div intro end %>
 
-<% current_user.bookings.first(4).each do |booking| %>
-<div class="card p-2 m-2">
-  <p> Current status: <%= booking.status  %> | <small><%= booking.created_at  %></small> </p>
-  <p> I ordered
-    <%= image_tag(booking.bike.pictures.first) %>
-    <%= booking.bike.maker  %> |
-    <%= booking.bike.model  %> |
-    <%= booking.bike.year  %></p>
-  <p>From: <%= booking.bike.user.first_name  %> <%= booking.bike.user.last_name  %> (<%= booking.bike.user.email  %>)</p>
+  <div class="mybikes">
+    <h2 id="mybikes">My Bikes</h2>
+    <%= link_to "Add new bike", '/bikes/new' %>
 
-</div>
-<% end  %>
+    <% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
+    <div class="card p-2">
+        <%= image_tag(bike.pictures.first) %>
+        <p><%= bike.maker  %> |
+          <%= bike.model  %> |
+          <%= bike.year  %> |
+          <%= bike.location  %> |
+          <%= bike.longitude  %> |
+          <%= bike.latitude  %> |
+          <%= bike.mileage  %></p>
+          <% end  %>
+    <%= link_to "View all", '/dashboard#my_bikes' %>
+    </div>
 
-<%= link_to "View all my bookings", '/dashboard#bookings' %>
+    
+    <div class="mybookings">
+      <h2 id="mybookings">My bookings</h2>
 
-<h2 id="bookingrequests">Booking Requests</h2>
+      <% current_user.bookings.first(4).each do |booking| %>
+      <div class="card p-2 m-2">
+        <p> Current status: <%= booking.status  %> | <small><%= booking.created_at  %></small> </p>
+        <p> I ordered
+          <%= image_tag(booking.bike.pictures.first) %>
+          <%= booking.bike.maker  %> |
+          <%= booking.bike.model  %> |
+          <%= booking.bike.year  %></p>
+        <p>From: <%= booking.bike.user.first_name  %> <%= booking.bike.user.last_name  %> (<%= booking.bike.user.email  %>)</p>
+      </div>
+      <% end  %>
 
-<% current_user.received_bookings.first(4).each do |booking| %>
-<div class="card p-2">
-  <p><%= booking.status  %> |
-    <%= booking.bike.maker  %> |
-    <%= booking.bike.model  %> |
-    <%= booking.bike.year  %></p>
-    <p><%= booking.user.email  %> |
-    <%= booking.user.first_name  %> |
-    <%= booking.user.last_name  %>
-  </p>
-</div>
-<% end  %>
+      <%= link_to "View all my bookings", '/dashboard#bookings' %>
+    </div><%#div my bookings end %>
 
-<%= link_to "View all received bookings", '/dashboard#bookings' %>
+    <div class="bookingrequests">
+      <h2 id="bookingrequests">Booking Requests</h2>
 
-</div> <%# closing div for /container %>
+      <% current_user.received_bookings.first(4).each do |booking| %>
+      <div class="card p-2">
+        <p><%= booking.status  %> |
+          <%= booking.bike.maker  %> |
+          <%= booking.bike.model  %> |
+          <%= booking.bike.year  %></p>
+          <p><%= booking.user.email  %> |
+          <%= booking.user.first_name  %> |
+          <%= booking.user.last_name  %>
+        </p>
+      </div>
+      <% end  %>
+
+      <%= link_to "View all received bookings", '/dashboard#bookings' %>
+    </div><%#div my bookingrequest end %>
+  </div> <%#div container end %>
+
+
+
 
 <div class="footer">
-<h1>Footer</h1>
-</div>
+  <h1>Footer</h1>
+</div> <%# closing div for /footer %>
