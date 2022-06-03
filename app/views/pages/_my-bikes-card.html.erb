@@ -1,0 +1,15 @@
+<% Bike.where("user_id = #{current_user.id}").first(4).each do |bike| %>
+  <div class="card-horizontal">
+    <%= cl_image_tag bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
+    <div class="card-horizontal-infos">
+      <div class="horiz-card-text">
+        <h2><%="#{bike.maker} #{bike.model}"%></h2>
+        <p><%= bike.category  %></p>
+        <p id="price"><%= bike.daily_price.truncate  %><span> IDR/day</span></p>
+      </div>
+      <div class="horiz-card-available">
+        AVAILABLE
+      </div>
+    </div>
+  </div>
+<% end  %>

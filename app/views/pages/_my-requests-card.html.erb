@@ -1,0 +1,17 @@
+
+<% current_user.received_bookings.first(4).each do |booking| %>
+  <div class="card-horizontal">
+    <div class="card-horizontal-infos">
+      <div class="horiz-card-text">
+        <p><%= booking.status  %> |
+        <%= booking.bike.maker  %> |
+        <%= booking.bike.model  %> |
+        <%= booking.bike.year  %></p>
+        <p><%= booking.user.email  %> |
+        <%= booking.user.first_name  %> |
+        <%= booking.user.last_name  %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end  %>
