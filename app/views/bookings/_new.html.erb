@@ -10,13 +10,10 @@
         <%= simple_form_for [@bike, @booking] do |f| %>
         <%= f.input :start_date, label: "Pickup date", id: "pickup"  %>
         <%= f.input :end_date, label: "Return date"  %>
+        <%= f.submit "Send request to owner", class: "button primary-btn btn-txt-body-primary button-block mt-5 mx-auto" %>
+        <% end %>
 
         <%# <h4 class="mt-5">Total price: <strong>XX XXX XXX</strong> IDR</h4> %>
-      </div>
-      <div class="modal-footer d-flex justify-content-between">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <%= f.submit "Send request to owner", class: "button primary-btn btn-txt-body-primary button-block ml-auto" %>
-        <% end %>
       </div>
     </div>
   </div>
