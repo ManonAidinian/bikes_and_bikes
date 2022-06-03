@@ -1,0 +1,23 @@
+
+<div class="modal  fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New booking</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@bike, @booking] do |f| %>
+        <%= f.input :start_date, label: "Pickup date", id: "pickup"  %>
+        <%= f.input :end_date, label: "Return date"  %>
+
+        <%# <h4 class="mt-5">Total price: <strong>XX XXX XXX</strong> IDR</h4> %>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <%= f.submit "Send request to owner", class: "button primary-btn btn-txt-body-primary button-block ml-auto" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,6 @@ class BikesController < ApplicationController
     else
       @bikes = Bike.all
     end
-    
     @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,
@@ -20,9 +19,11 @@ class BikesController < ApplicationController
     @bike_avg_rating = @bike.reviews.average(:bike_rating)
     @owner_avg_rating = @bike.reviews.average(:owner_rating)
 
+    @booking = Booking.new()
+
     @marker = {
-        lat: @bike.latitude || 0,
-        lng: @bike.longitude || 0
+      lat: @bike.latitude || 0,
+      lng: @bike.longitude || 0
       }
   end
 
