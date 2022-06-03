@@ -1,6 +1,6 @@
 
 <% current_user.bookings.first(4).each do |booking| %>
-  <%= link_to bike_path(booking.bike) do %>
+  <%= link_to bike_path(booking.bike), class: "text-decoration-none" do %>
     <div class="card-horizontal">
       <%= cl_image_tag booking.bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
       <div class="card-horizontal-infos">
