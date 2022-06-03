@@ -6,6 +6,8 @@
   border-radius: 10px;
   display: flex;
   align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .card-horizontal img {
@@ -27,6 +29,7 @@
   font-size: 20px;
   font-weight: bold;
   margin: 0;
+  text-decoration: none;
 }
 
 .horiz-card-text p {
@@ -36,6 +39,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  text-decoration: none;
 }
 
 // .card-horizontal .card-horizontal-infos {
