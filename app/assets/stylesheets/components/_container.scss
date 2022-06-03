@@ -89,6 +89,8 @@ body {
 }
 .dashboard-container {
   height: 600px;
-  width: 730px;
-  padding: 30px;
+  width: 1000px;
+  padding: 50px;
+  overflow: hidden;
+  overflow-y: scroll;
 }

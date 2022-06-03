@@ -5,37 +5,36 @@
 
   <div class="dashboard-container">
 
-    <div class="title">
-      <h1>Dashboard</h1>
+      <div class="title">
+        
+        <br><h1>Dashboard</h1><br><br>
+      </div>
+
+      <div class="intro">
+        <h2>Hello<%= " #{current_user.first_name} #{current_user.last_name}" %></h2>
+        <p><small><%= "Joined #{current_user.created_at}" %></small></p>
+      </div> <%#div intro end %>
+
+      <div class="mybikes"><br>
+        <h2 id="mybikes">My Bikes</h2>
+
+  <%# MANON'S my bikes horizontal card ----------------------- %>
+        <%= render 'my-bikes-card' %><br>
+        <%= link_to "Add new bike", '/bikes/new' %><br><br>
+  <%# END MANON'S my bikes horizontal card ----------------------- %>
+      </div> <%#div my bikes end %>
+
+
+      <div class="mybookings">
+        <h2 id="mybookings">My bookings</h2>
+  <%# MANONS card my-bookings----------------------- %>
+        <%= render 'my-bookings-card' %><br><br>
+        
+        <h2 id="bookingrequests">Booking Requests</h2>
+        <%= render 'my-requests-card' %><br>
+
+        <%= link_to "View all received bookings", '/dashboard#bookings' %><br><br>
+  <%# end MANONS card my-bookings----------------------- %>
+      </div><%#div my bookings end %>
     </div>
-
-    <div class="intro">
-      <h2>Hello<%= "#{current_user.first_name} #{current_user.last_name}" %></h2>
-      <p><small><%= "Joined #{current_user.created_at}" %></small></p>
-    </div> <%#div intro end %>
-
-    <div class="mybikes">
-      <h2 id="mybikes">My Bikes</h2>
-      <%= link_to "Add new bike", '/bikes/new' %>
-<%# MANON'S my bikes horizontal card ----------------------- %>
-      <%= render 'my-bikes-card' %>
-<%# END MANON'S my bikes horizontal card ----------------------- %>
-    </div> <%#div my bikes end %>
-
-
-    <div class="mybookings">
-      <h2 id="mybookings">My bookings</h2>
-<%# MANONS card my-bookings----------------------- %>
-      <%= render 'my-bookings-card' %>
-<%# end MANONS card my-bookings----------------------- %>
-    </div><%#div my bookings end %>
-
-
-    <div class="bookingrequests">
-      <h2 id="bookingrequests">Booking Requests</h2>
-<%# MANONS card my-request----------------------- %>
-      <%= render 'my-requests-card' %>
-<%# end MANONS card my-request----------------------- %>
-      <%= link_to "View all received bookings", '/dashboard#bookings' %>
-    </div><%#div my bookingrequest end %>
 </div>

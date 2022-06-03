@@ -1,17 +1,19 @@
 
 <% current_user.bookings.first(4).each do |booking| %>
-  <div class="card-horizontal">
-    <%# <%= image_tag(booking.bike.pictures.first), height: 150, width: 150, crop: :fill %>
-    <div class="card-horizontal-infos">
-      <div class="horiz-card-text">
-      <p> Current status: <%= booking.status  %> | <small><%= booking.created_at  %></small> </p>
-          <p> I ordered
-            <%= booking.bike.maker  %> |
-            <%= booking.bike.model  %> |
-            <%= booking.bike.year  %></p>
-          <p>From: <%= booking.bike.user.first_name  %> <%= booking.bike.user.last_name  %> (<%= booking.bike.user.email  %>)</p>
+  <%= link_to bike_path(booking.bike) do %>
+    <div class="card-horizontal">
+      <%= cl_image_tag booking.bike.pictures.first.key, height: 150, width: 150, crop: :fill %>
+      <div class="card-horizontal-infos">
+        <div class="horiz-card-text">
+        <p> Current status: <%= booking.status  %> | <small><%= booking.created_at  %></small> </p>
+            <p> I ordered
+              <%= booking.bike.maker  %> |
+              <%= booking.bike.model  %> |
+              <%= booking.bike.year  %></p>
+            <p>From: <%= booking.bike.user.first_name  %> <%= booking.bike.user.last_name  %> (<%= booking.bike.user.email  %>)</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end  %>
 <% end  %>
