@@ -9,11 +9,41 @@
   background-size: cover;
   max-height: 100vh;
 }
- .banner-title {
-   color: white;
- }
+.banner-title {
+  color: white;
+}
 
- #query {
-   background-color: white;
- }
- 
+.banner-slogan {
+  color: #83BCFF !important;
+}
+
+#query {
+  background-color: white;
+  padding: 3px;
+  padding-left: 10px;
+}
+
+.d-flex {
+-webkit-border-radius: 50px !important;
+    -moz-border-radius: 50px !important;
+        border-radius: 50px !important;
+-webkit-border-top: 50px !important;
+    -moz-border-top: 50px !important;
+        border-top: 50px !important;
+-webkit-border-bottom: 50px !important;
+    -moz-border-bottom: 50px !important;
+        border-bottom: 50px !important;
+}
+
+.d-flex {
+  align-items: center;
+}
+
+ .btn-primary {
+  margin-right: 10px;
+  padding: 25px;
+}
+
+// .btn {
+//   padding: 25px;
+// }

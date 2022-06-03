@@ -1,3 +1,5 @@
+<div class="card-link">
+<%= link_to bike_path(bike) do %>
 <div class="bike-card-small-rated">
 
   <div class="bike-card-small-rated-header">
@@ -16,13 +18,21 @@
       <%= cl_image_tag bike.pictures.first.key, height: 200, width: 350, crop: :fill %>
 
     <div class="text">
-      <h3><%=link_to "#{bike.maker} #{bike.model}", bike_path(bike) %></h3>
+      <div class="main">
+      <h3><%="#{bike.maker} #{bike.model}"%></h3>
       <p>
         <%= bike.category  %> |
-        <%= bike.location  %> |
-        <%= bike.daily_price.truncate  %>IDR
+        <%= bike.location  %>
       </p>
+      </div>
+
+      <div class="price">
+        <%= bike.daily_price.truncate  %> <span>IDR/day</span>
+      </div>
+
     </div>
   </div>
 
+</div>
+<% end %>
 </div>

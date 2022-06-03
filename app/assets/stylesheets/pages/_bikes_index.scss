@@ -1,5 +1,8 @@
 .text {
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .bike-card-small-rated-header {
@@ -17,4 +20,32 @@
 .map {
   height: 100vh;
   position: sticky;
+}
+
+#map {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.bike-card-small-rated {
+  border-radius: 10px;
+}
+
+.card-link a:link {
+  text-decoration:none;
+}
+
+.text {
+  p {
+    color: grey;
+  }
+}
+
+.price {
+  font-weight: bold;
+}
+
+.price span {
+  color: grey;
+  font-weight: lighter
 }
