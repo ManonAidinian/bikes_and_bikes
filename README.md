@@ -1,4 +1,4 @@
-### Find the perfect bike for you or rent your own and make money!
+### 🏍 Find the perfect bike for you or rent your own and make money!
 
 https://bikes-and-bikes.herokuapp.com/
 
